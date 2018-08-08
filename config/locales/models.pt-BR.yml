@@ -1,0 +1,8 @@
+"pt-BR":
+  activerecord:
+    models:
+      situacao: Situação
+    attributes:
+      situacao:
+        descricao: "Descrição"
+        observacao: "Observação"

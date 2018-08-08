@@ -10,7 +10,11 @@ module Tcc
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-
+    
+    config.i18n.default_locale = :"pt-BR"
+    I18n.enforce_available_locales = false
+    config.time_zone = "Brasilia"
+    config.active_record.default_timezone = :local
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
