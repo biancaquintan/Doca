@@ -10,9 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_08_08_043509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cursos", force: :cascade do |t|
+    t.string "descricao"
+    t.string "nivelEscolaridade"
+    t.integer "quantidadePeriodo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pedido_atestados", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pedidos", force: :cascade do |t|
+    t.string "nome"
+    t.string "matricula"
+    t.string "pasta"
+    t.string "periodo"
+    t.string "turno"
+    t.string "anoLetivo"
+    t.string "telefone"
+    t.string "celular"
+    t.string "email"
+    t.text "finalidadePedido"
+    t.string "type"
+    t.bigint "curso_id"
+    t.bigint "situacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["curso_id"], name: "index_pedidos_on_curso_id"
+    t.index ["situacao_id"], name: "index_pedidos_on_situacao_id"
+  end
+
+  create_table "situacoes", force: :cascade do |t|
+    t.string "descricao"
+    t.text "observacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "pedidos", "cursos"
+  add_foreign_key "pedidos", "situacoes"
 end
