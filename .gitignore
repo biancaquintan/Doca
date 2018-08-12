@@ -376,3 +376,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
+# Ignore master key for decrypting credentials and more.
+/config/master.key

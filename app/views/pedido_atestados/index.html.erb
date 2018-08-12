@@ -5,6 +5,19 @@
 <table>
   <thead>
     <tr>
+      <!-- <th>Type</th> -->
+      <th>Nomealuno</th>
+      <th>Matricula</th>
+      <th>Pasta</th>
+      <th>Periodo</th>
+      <th>Turno</th>
+      <th>Anoletivo</th>
+      <th>Telefone</th>
+      <th>Celular</th>
+      <th>Email</th>
+      <th>Finalidadepedido</th>
+      <th>Curso</th>
+      <th>Situacao</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +25,20 @@
   <tbody>
     <% @pedido_atestados.each do |pedido_atestado| %>
       <tr>
+        <!-- <td><%= pedido_atestado.type %></td> -->
+        <td><%= pedido_atestado.nome %></td>
+        <td><%= pedido_atestado.matricula %></td>
+        <td><%= pedido_atestado.pasta %></td>
+        <td><%= pedido_atestado.periodo %></td>
+        <td><%= pedido_atestado.turno %></td>
+        <td><%= pedido_atestado.anoLetivo %></td>
+        <td><%= pedido_atestado.telefone %></td>
+        <td><%= pedido_atestado.celular %></td>
+        <td><%= pedido_atestado.email %></td>
+        <td><%= pedido_atestado.finalidadePedido %></td>
+        <td><%= pedido_atestado.curso.descricao %></td>
+        <td><%= pedido_atestado.situacao.descricao %></td>
+
         <td><%= link_to 'Show', pedido_atestado %></td>
         <td><%= link_to 'Edit', edit_pedido_atestado_path(pedido_atestado) %></td>
         <td><%= link_to 'Destroy', pedido_atestado, method: :delete, data: { confirm: 'Are you sure?' } %></td>

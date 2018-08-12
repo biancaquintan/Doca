@@ -11,7 +11,73 @@
     </div>
   <% end %>
 
+  <!-- <div class="field">
+    <%= form.label :type %>
+    <%= form.text_field :type %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matricula %>
+    <%= form.text_field :matricula %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pasta %>
+    <%= form.text_field :pasta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :turno %>
+    <%= form.text_field :turno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :curso_id %>
+    <!-- <%= form.text_field :curso_id %> -->
+    <%= form.collection_select :curso_id, Curso.all, :id, :descricao, :prompt => "Selecione" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :periodo, "Módulo/Período" %>
+    <%= form.text_field :periodo %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :anoLetivo %>
+    <%= form.text_field :anoLetivo %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :celular %>
+    <%= form.text_field :celular %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finalidadePedido, "Finalidade do pedido" %>
+    <%= form.text_area :finalidadePedido %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :situacao_id %>
+    <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao, :prompt => "Selecione" %>
+  </div> -->
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :Enviar %>
   </div>
 <% end %>
