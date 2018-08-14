@@ -51,14 +51,3 @@ function SomenteNumero(e){
 	else  return false;
     }
 }
-
-
-$(document).ready(function(){
-  var pasta = $(".cnpj-mask");
-  //var cnpj = $("input[id*=_cnpj][type='text']");
-  if (pasta != null) {
-    pasta.inputmask("99.999.999/9999-99", {"removeMaskOnSubmit": true});
-  }
-
-  $("input[type='submit']").attr('data-disable-with', 'Aguarde...');
-});
