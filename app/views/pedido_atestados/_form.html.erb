@@ -23,23 +23,24 @@
 
   <div class="field">
     <%= form.label :matricula %>
-    <%= form.text_field :matricula %>
+    <%= form.text_field :matricula, onkeypress: 'return SomenteNumero(event)', maxlength: '12'   %>
   </div>
 
   <div class="field">
     <%= form.label :pasta %>
-    <%= form.text_field :pasta %>
+    <%= form.text_field :pasta, onkeypress: 'return SomenteNumero(event)', maxlength: '6'  %>
   </div>
 
   <div class="field">
     <%= form.label :turno %>
-    <%= form.text_field :turno %>
+    <%= form.radio_button :turno, 'Matutino' %> Matutino
+    <%= form.radio_button :turno, 'Noturno' %> Noturno
+    <%= form.radio_button :turno, 'Integral' %> Integral
   </div>
 
   <div class="field">
     <%= form.label :curso_id %>
-    <!-- <%= form.text_field :curso_id %> -->
-    <%= form.collection_select :curso_id, Curso.all, :id, :descricao, :prompt => "Selecione" %>
+    <%= form.collection_select :curso_id, Curso.all.order(descricao: :asc), :id, :descricao, :prompt => "Selecione" %>
   </div>
 
   <div class="field">
@@ -54,28 +55,28 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, type: 'email', placeholder:'aluno@exemplo.com' %>
   </div>
 
   <div class="field">
     <%= form.label :telefone %>
-    <%= form.text_field :telefone %>
+    <%= form.text_field :telefone, onkeyup: 'telefone(this);', placeholder:'(xx) xxxx-xxxx' %>
   </div>
 
   <div class="field">
     <%= form.label :celular %>
-    <%= form.text_field :celular %>
+    <%= form.text_field :celular, onkeyup: 'celular(this);', placeholder:'(xx) xxxxx-xxxx' %>
   </div>
 
   <div class="field">
     <%= form.label :finalidadePedido, "Finalidade do pedido" %>
-    <%= form.text_area :finalidadePedido %>
+    <%= form.text_area :finalidadePedido, placeholder:'Informe o motivo da solicitação...' %>
   </div>
 
-  <!-- <div class="field">
+  <div class="field" style="display: none">
     <%= form.label :situacao_id %>
-    <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao, :prompt => "Selecione" %>
-  </div> -->
+    <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao, :selected => '1' %>
+  </div>
 
   <div class="actions">
     <%= form.submit :Enviar %>
