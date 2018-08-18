@@ -15,6 +15,7 @@ class PedidoAtestadosController < ApplicationController
   # GET /pedido_atestados/new
   def new
     @pedido_atestado = PedidoAtestado.new
+    @pedido_atestado.situacao_id = 1
   end
 
   # GET /pedido_atestados/1/edit

@@ -11,11 +11,6 @@
     </div>
   <% end %>
 
-  <!-- <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
-  </div> -->
-
   <div class="field">
     <%= form.label :nome %>
     <%= form.text_field :nome %>
@@ -33,7 +28,7 @@
 
   <div class="field">
     <%= form.label :turno %>
-    <%= form.radio_button :turno, 'Matutino' %> Matutino
+    <%= form.radio_button :turno, 'Diurno' %> Diurno
     <%= form.radio_button :turno, 'Noturno' %> Noturno
     <%= form.radio_button :turno, 'Integral' %> Integral
   </div>
@@ -75,7 +70,7 @@
 
   <div class="field" style="display: none">
     <%= form.label :situacao_id %>
-    <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao, :selected => '1' %>
+    <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao %>
   </div>
 
   <div class="actions">
