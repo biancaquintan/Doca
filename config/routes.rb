@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :usuarios
   resources :pedido_atestados
   get 'home/index'
   get 'home/home_aluno'
