@@ -11,7 +11,69 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matricula %>
+    <%= form.text_field :matricula, onkeypress: 'return SomenteNumero(event)', maxlength: '12'   %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pasta %>
+    <%= form.text_field :pasta, onkeypress: 'return SomenteNumero(event)', maxlength: '6'  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :turno %>
+    <%= form.radio_button :turno, 'Diurno' %> Diurno
+    <%= form.radio_button :turno, 'Noturno' %> Noturno
+    <%= form.radio_button :turno, 'Integral' %> Integral
+  </div>
+
+  <div class="field">
+    <%= form.label :curso_id %>
+    <%= form.collection_select :curso_id, Curso.all.order(descricao: :asc), :id, :descricao, :prompt => "Selecione" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :periodo, "Módulo/Período" %>
+    <%= form.text_field :periodo %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :anoLetivo %>
+    <%= form.text_field :anoLetivo %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, type: 'email', placeholder:'aluno@exemplo.com' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone, onkeyup: 'telefone(this);', placeholder:'(xx) xxxx-xxxx' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :celular %>
+    <%= form.text_field :celular, onkeyup: 'celular(this);', placeholder:'(xx) xxxxx-xxxx' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finalidadePedido, "Finalidade do pedido" %>
+    <%= form.text_area :finalidadePedido, placeholder:'Informe o motivo da solicitação...' %>
+  </div>
+
+  <div class="field" style="display: none">
+    <%= form.label :situacao_id %>
+    <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :Enviar %>
   </div>
 <% end %>

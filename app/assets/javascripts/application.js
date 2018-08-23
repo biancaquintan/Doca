@@ -14,3 +14,40 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+function celular(component){
+  var v = component.value;
+
+  if (v.length < 16){
+    v= v.replace(/\D/g,"");
+    v= v.replace(/^(\d{2})(\d)/g, "($1) $2");
+    v= v.replace(/(\d)(\d{4})$/, "$1-$2");
+
+    component.value = v;
+  }else{
+    component.value = v.substring(0,(component.value.length - 1));
+  }
+}
+
+function telefone(component){
+  var v = component.value;
+
+  if (v.length < 15){
+    v= v.replace(/\D/g,"");
+    v= v.replace(/^(\d{2})(\d)/g, "($1) $2");
+    v= v.replace(/(\d)(\d{4})$/, "$1-$2");
+
+    component.value = v;
+  }else{
+    component.value = v.substring(0,(component.value.length - 1));
+  }
+}
+
+function SomenteNumero(e){
+    var tecla=(window.event)?event.keyCode:e.which;
+    if((tecla>47 && tecla<58)) return true;
+    else{
+    	if (tecla==8 || tecla==0) return true;
+	else  return false;
+    }
+}

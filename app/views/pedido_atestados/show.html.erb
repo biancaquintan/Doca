@@ -1,4 +1,68 @@
 <p id="notice"><%= notice %></p>
 
+<!-- <p>
+  <strong>Type:</strong>
+  <%= @pedido_atestado.type %>
+</p> -->
+
+<p>
+  <strong>Nome do aluno:</strong>
+  <%= @pedido_atestado.nome %>
+</p>
+
+<p>
+  <strong>Matrícula:</strong>
+  <%= @pedido_atestado.matricula %>
+</p>
+<p>
+  <strong>Pasta:</strong>
+  <%= @pedido_atestado.pasta %>
+</p>
+
+<p>
+  <strong>Turno:</strong>
+  <%= @pedido_atestado.turno %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @pedido_atestado.curso.descricao %>
+</p>
+
+<p>
+  <strong>Período:</strong>
+  <%= @pedido_atestado.periodo %>
+</p>
+
+<!-- <p>
+  <strong>Anoletivo:</strong>
+  <%= @pedido_atestado.anoLetivo %>
+</p> -->
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @pedido_atestado.telefone %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @pedido_atestado.celular %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @pedido_atestado.email %>
+</p>
+
+<p>
+  <strong>Finalidade do pedido:</strong>
+  <%= @pedido_atestado.finalidadePedido %>
+</p>
+
+<p>
+  <strong>Situação:</strong>
+  <%= @pedido_atestado.situacao.descricao %>
+</p>
+
 <%= link_to 'Edit', edit_pedido_atestado_path(@pedido_atestado) %> |
 <%= link_to 'Back', pedido_atestados_path %>

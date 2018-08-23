@@ -15,6 +15,7 @@ class PedidoAtestadosController < ApplicationController
   # GET /pedido_atestados/new
   def new
     @pedido_atestado = PedidoAtestado.new
+    @pedido_atestado.situacao_id = 1
   end
 
   # GET /pedido_atestados/1/edit
@@ -69,6 +70,7 @@ class PedidoAtestadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_atestado_params
-      params.fetch(:pedido_atestado, {})
+      # params.fetch(:pedido_atestado, {})
+      params.require(:pedido_atestado).permit(:type, :nome, :matricula, :pasta, :periodo, :turno, :anoLetivo, :telefone, :celular, :email, :finalidadePedido, :curso_id, :situacao_id)
     end
 end
