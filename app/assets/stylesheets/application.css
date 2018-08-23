@@ -12,4 +12,41 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
+ *= require sticky-footer
+ *= require mdb
+ *= require font-awesome
  */
+
+body {
+  padding-top: 90px;
+  width: 100%;
+  background-color: #ededed !important;
+  color: #333 !important;
+}
+#main {
+  padding: 0 50px;
+}
+.btn-group-vertical a{
+  color: #ededed;
+  padding: inherit;
+  font-weight: bolder;
+}
+.btn-group-vertical button{
+  margin-bottom: 10px;
+}
+.btn-group-vertical a:hover {
+  background-color: transparent;
+  color: #333;
+}
+nav a {
+  font-weight: 900;
+  color: #ededed !important;
+}
+.navbar-brand:hover {
+  color: #333 !important;
+  background-color: transparent;
+}
+.btn-group-vertical button i {
+  padding-right: 10px;
+}

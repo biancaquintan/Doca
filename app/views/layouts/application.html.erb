@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tcc</title>
+    <title>TCC</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar fixed-top navbar-dark default-color">
+        <a class="navbar-brand" href="/home/index">TCC</a>
+      </nav>
+    </header>
+    <section class="container-fluid" id="main">
+      <%= yield %>
+    </section>
+    <footer class="footer card-footer text-muted small">
+      <div class="container text-center">
+        <span>Trabalho de Conclusão de Curso.</span>
+        <div>© 2018 Copyright: Bianca Sóta Quintãn, David da Silva Azeredo e Leandro Vicente Silva
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
