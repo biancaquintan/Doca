@@ -1,4 +1,6 @@
 class BibliotecasController < ApplicationController
-  def index 
+  before_action :authenticate_usuario!
+
+  def index
   end
 end
