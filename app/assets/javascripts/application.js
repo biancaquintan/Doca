@@ -10,10 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_tree .
 //= require rails-ujs
+//= require jquery-3.3.1.min
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require popper.min
+//= require bootstrap.min
+//= require mdb.min
 
 function celular(component){
   var v = component.value;
