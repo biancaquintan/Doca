@@ -21,32 +21,87 @@
 body {
   padding-top: 90px;
   width: 100%;
-  background-color: #ededed !important;
+  background-color: #f4f4f4 !important;
   color: #333 !important;
 }
 #main {
   padding: 0 50px;
 }
+h1 {
+  font-size: 1.5rem !important;
+}
+.nav-color{
+  background-color: #E9E7DA;
+}
+#navbar a {
+  font-weight: 900;
+  color: #333;
+}
+#navbar .navbar-brand:hover {
+  color: #66AB8C;
+  background-color: transparent;
+}
+.btn-group .btn-menu {
+  color: #ededed;
+  background-color: #333;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.btn-group i {
+  padding-right: 5px;
+}
+.btn-group .btn-menu2 {
+  color: #ededed;
+  background-color: #66AB8C;
+}
+.btn-group .btn-menu:hover,
+.btn-group .btn-menu2:hover {
+  color: #333;
+  background-color: #E9E7DA;
+}
+.input-group.md-form.form-sm.form-2 input.green-default-border  {
+    border: 1px solid #66AB8C;
+}
+.input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.green-default{
+  background-color: #66AB8C !important;
+}
+#div-busca {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 100px auto;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.btn-index {
+  color: #ededed;
+  background-color: #333;
+  border-radius: 10px !important;
+}
 .btn-group-vertical a{
   color: #ededed;
-  padding: inherit;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 14px;
 }
-.btn-group-vertical button{
+.btn-group-vertical a{
   margin-bottom: 10px;
 }
 .btn-group-vertical a:hover {
-  background-color: transparent;
+  color: #333;
+  background-color: #E9E7DA;
+}
+.btn-group-vertical a:hover .fa{
   color: #333;
 }
-nav a {
-  font-weight: 900;
-  color: #ededed !important;
-}
-.navbar-brand:hover {
-  color: #333 !important;
-  background-color: transparent;
-}
-.btn-group-vertical button i {
+.btn-group-vertical a .fa {
   padding-right: 10px;
+  font-size: 22px;
+}
+.btn-group-vertical .fa{
+  color: #66AB8C;
 }

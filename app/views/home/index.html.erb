@@ -2,7 +2,16 @@
 <p> Escolha abaixo o módulo que deseja acessar. Dados de login poderão ser necessários.</p>
 
 <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-    <button type="button" class="btn btn-rounded btn-blue-grey ml-0 text-left"><a href="/home/home_aluno"><i class="fa fa-user fa-lg" aria-hidden="true"></i> Aluno</a></button>
-    <button type="button" class="btn btn-rounded btn-blue-grey ml-0 text-left"><a href="/home/home_registro_academico"><i class="fa fa-id-card-o fa-lg" aria-hidden="true"></i> Registro Acadêmico</a></button>
-    <button type="button" class="btn btn-rounded btn-blue-grey ml-0 text-left"><a href="/home/home_biblioteca"><i class="fa fa-book fa-lg" aria-hidden="true"></i> Biblioteca</a></button>
+  <%= link_to home_home_aluno_path, :class => 'btn btn-index ml-0 text-left' do %>
+    <i class="fa fa-user" aria-hidden="true"></i>
+    Aluno
+  <% end %>
+  <%= link_to home_home_registro_academico_path, :class => 'btn btn-index ml-0 text-left' do %>
+    <i class="fa fa-id-card-o" aria-hidden="true"></i>
+    Registro Acadêmico
+  <% end %>
+  <%= link_to home_home_biblioteca_path, :class => 'btn btn-index ml-0 text-left' do %>
+    <i class="fa fa-book" aria-hidden="true"></i>
+    Biblioteca
+  <% end %>
 </div>

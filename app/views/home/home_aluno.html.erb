@@ -1,6 +1,16 @@
-<h1>Página do Aluno</h1>
+<h1>Área do Aluno</h1>
 <hr/>
 
-<%= link_to 'Solicitar Atestado de Matrícula', new_pedido_atestado_path %>
-<br>
-<%= link_to 'Sair', root_path %>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to new_pedido_atestado_path, :class => 'btn btn-menu' do %>
+    <i class="fa fa-edit fa-5x" aria-hidden="true"></i>
+    Solicitar Atestado de Matrícula
+  <% end %>
+  <%= link_to home_search_path, :class => 'btn btn-menu2' do %>
+    <i class="fa fa-search fa-5x" aria-hidden="true"></i>
+    Buscar Pedido
+  <% end %>
+</div>
+
+<br><br><br>
+<%= link_to 'Voltar', root_path %>
