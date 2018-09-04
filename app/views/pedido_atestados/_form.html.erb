@@ -40,6 +40,7 @@
 
   <div class="field">
     <%= form.label :periodo, "Módulo/Período" %>
+    <!--%= form.collection_select :curso_id, Curso.all.order(quantidadePeriodo: :asc), :id, :quantidadePeriodo, :prompt => "Selecione" %-->
     <%= form.text_field :periodo %>
   </div>
 

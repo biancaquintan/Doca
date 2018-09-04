@@ -6,11 +6,12 @@
     <i class="fa fa-list fa-5x" aria-hidden="true"> </i>
      Atendimento de Pedidos
   <% end %>
-  <%= link_to home_search_path, :class => 'btn btn-menu2' do %>
+  <%= link_to buscapedido_path, :class => 'btn btn-menu2' do %>
     <i class="fa fa-search fa-5x" aria-hidden="true"></i>
     Buscar Pedido
   <% end %>
 </div>
 
 <br><br><br>
-<%= link_to 'Sair', root_path %>
+<%# link_to 'Sair', root_path %>
+<%= link_to 'Sair', destroy_usuario_session_path, method: :delete %> 
