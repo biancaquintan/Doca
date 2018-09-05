@@ -30,5 +30,9 @@ namespace :utils do
                     {descricao: "Tecnólogo em Design Gráfico", nivelEscolaridade: "Superior",quantidadePeriodo: 6},
                     {descricao: "Tecnólogo em Manutenção Industrial", nivelEscolaridade: "Superior",quantidadePeriodo: 6}
       ])
+    puts "Cadastro de Usuários"
+      Usuario.create([{email: "biblioteca@iff.edu.br", password: "biblioteca123", password_confirmation: "biblioteca123", tipo: "biblioteca"},
+                      {email: "registro@iff.edu.br", password: "registro123", password_confirmation: "registro123", tipo: "registro"}
+      ])
   end
 end
