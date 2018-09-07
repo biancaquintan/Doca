@@ -19,7 +19,7 @@
  */
 
 body {
-  padding-top: 90px;
+  padding-top: 30px;
   width: 100%;
   background-color: #f4f4f4 !important;
   color: #333 !important;
@@ -29,6 +29,7 @@ body {
 }
 h1 {
   font-size: 1.5rem !important;
+  font-weight: bold !important;
 }
 .nav-color{
   background-color: #E9E7DA;
@@ -41,14 +42,17 @@ h1 {
   color: #66AB8C;
   background-color: transparent;
 }
+.btn-group {
+  top: 30px;
+}
 .btn-group .btn-menu {
   color: #ededed;
   background-color: #333;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.btn-group i {
-  padding-right: 5px;
+.btn-group a {
+  padding: 10px 30px;
 }
 .btn-group .btn-menu2 {
   color: #ededed;
@@ -75,9 +79,19 @@ h1 {
   max-width: 400px;
   margin: 100px auto;
 }
-
+.icone {
+  border: 2px solid #333;
+  padding: 2px 5px;
+  border-radius: 40px;
+  background-color: #333;
+  color: #E9E7DA;
+}
+a.btn.pull-right {
+  padding: 5px 10px !important;
+}
 
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
 .btn-index {
   color: #ededed;
   background-color: #333;
@@ -87,6 +101,7 @@ h1 {
   color: #ededed;
   font-weight: bold;
   font-size: 14px;
+  padding: 15px 30px;
 }
 .btn-group-vertical a{
   margin-bottom: 10px;

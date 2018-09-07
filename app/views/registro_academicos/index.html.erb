@@ -1,4 +1,8 @@
-<h1>Área do Registro Acadêmico</h1>
+<i class="fa fa-id-card-o icone" aria-hidden="true"></i><strong><h7> Módulo do Registro Acadêmico</h7></strong>
+<%= link_to destroy_usuario_session_path, method: :delete, :class => 'pull-right btn green-default btn-sm text-white' do %>
+  <i class="fa fa-account-logout" aria-hidden="true"></i>
+  Sair
+<% end %>
 <hr/>
 
 <div class="btn-group" role="group" aria-label="Basic example">
@@ -11,7 +15,3 @@
     Buscar Pedido
   <% end %>
 </div>
-
-<br><br><br>
-<%# link_to 'Sair', root_path %>
-<%= link_to 'Sair', destroy_usuario_session_path, method: :delete %> 
