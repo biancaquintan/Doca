@@ -4,4 +4,8 @@ class BibliotecasController < ApplicationController
 
   def index
   end
+
+  def pedidos
+    @pedido_atestados = PedidoAtestado.all
+  end
 end
