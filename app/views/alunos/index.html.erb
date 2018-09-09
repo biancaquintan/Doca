@@ -1,4 +1,8 @@
-<h1>Área do Aluno</h1>
+<i class="fa fa-user icone" aria-hidden="true"></i><strong><h7> Módulo Aluno</h7></strong>
+<%= link_to root_path, :class => 'pull-right btn green-default btn-sm text-white' do %>
+  <i class="fa fa-arrow-left pr-1" aria-hidden="true"></i>
+  Voltar
+<% end %>
 <hr/>
 
 <div class="btn-group" role="group" aria-label="Basic example">
@@ -7,10 +11,7 @@
     Solicitar Atestado de Matrícula
   <% end %>
   <%= link_to buscapedido_path, :class => 'btn btn-menu2' do %>
-    <i class="fa fa-search fa-5x" aria-hidden="true"></i>
+    <i class="fa fa-search fa-5x pr-1" aria-hidden="true"></i>
     Buscar Pedido
   <% end %>
 </div>
-
-<br><br><br>
-<%= link_to 'Voltar', root_path %>

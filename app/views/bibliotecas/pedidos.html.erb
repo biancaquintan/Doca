@@ -1,0 +1,10 @@
+<i class="fa fa-book icone" aria-hidden="true"></i><strong><h7> Módulo da Biblioteca</h7></strong>
+<%= link_to destroy_usuario_session_path, method: :delete, :class => 'pull-right btn green-default btn-sm text-white' do %>
+  Sair
+  <i class="fa fa-sign-out pl-1" aria-hidden="true"></i>
+<% end %>
+<hr/>
+
+<div class="container-fluid">
+  <%= render partial: 'pedido_atestados/index' %>
+</div>
