@@ -30,4 +30,5 @@ class Pedido < ApplicationRecord
   validates :pasta, length: { :in => 5..6 }
   validates :telefone, length: { is: 14 }, allow_blank: true
   validates :celular, length: { is: 15 }, allow_blank: true
+  validates :finalidadePedido, length: { maximum: 220 }
 end
