@@ -23,6 +23,7 @@ body {
   width: 100%;
   background-color: #f4f4f4 !important;
   color: #333 !important;
+  padding-bottom: 100px;
 }
 #main {
   padding: 0 50px;
@@ -74,6 +75,9 @@ h1 {
 .green-default{
   background-color: #66AB8C !important;
 }
+.dark-default{
+  background-color: #263238 !important;
+}
 #div-busca {
   background-color: #fff;
   max-width: 400px;
@@ -88,6 +92,11 @@ h1 {
 }
 a.btn.pull-right {
   padding: 5px 10px !important;
+}
+
+.btn:hover {
+  background-color: #E9E7DA !important;
+  color: #333 !important;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
@@ -105,10 +114,6 @@ a.btn.pull-right {
 }
 .btn-group-vertical a{
   margin-bottom: 10px;
-}
-.btn-group-vertical a:hover {
-  color: #333;
-  background-color: #E9E7DA;
 }
 .btn-group-vertical a:hover .fa{
   color: #333;
