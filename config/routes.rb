@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :usuarios
   resources :pedido_atestados
 
+  get 'cursos' => 'cursos#find_by_curso'
   get 'aluno' => 'alunos#index'
   get 'registroacademico' => 'registro_academicos#index'
   get 'biblioteca' => 'bibliotecas#index'

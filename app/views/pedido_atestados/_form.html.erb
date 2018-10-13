@@ -35,13 +35,12 @@
 
   <div class="field">
     <%= form.label :curso_id %>
-    <%= form.collection_select :curso_id, Curso.all.order(descricao: :asc), :id, :descricao, :prompt => "Selecione" %>
+    <%= form.collection_select :curso_id, Curso.all.order(descricao: :asc), :id, :descricao, {:prompt => "Selecione:"}, {:id => "curso_id"} %>
   </div>
 
-  <div class="field">
+  <div class="field" id="idPeriodo" style="display: none">
     <%= form.label :periodo, "Módulo/Período" %>
-    <!--%= form.collection_select :curso_id, Curso.all.order(quantidadePeriodo: :asc), :id, :quantidadePeriodo, :prompt => "Selecione" %-->
-    <%= form.text_field :periodo %>
+    <%= form.collection_select :periodo, Curso.all.order(quantidadePeriodo: :asc), :quantidadePeriodo, :quantidadePeriodo, {:prompt => "Selecione:"}, {:id => "periodo"} %>
   </div>
 
   <div class="field">
