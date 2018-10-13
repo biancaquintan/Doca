@@ -1,4 +1,4 @@
-<%= form_with(model: pedido_atestado, local: true) do |form| %>
+<%= simple_form_for(@pedido_atestado, local: true) do |form| %>
   <% if pedido_atestado.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pedido_atestado.errors.count, "error") %> prohibited this pedido_atestado from being saved:</h2>
@@ -11,64 +11,53 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
-  </div>
+  <section style="border: 2px solid #ededed; padding: 10px; border-radius: 5px;">
+    <div class="form-row mb-4">
+      <div class="col">
+        <%= form.text_field :nome, :class => "form-control", :placeholder => 'Nome' %>
+      </div>
+      <div class="col">
+        <%= form.text_field :matricula, onkeypress: 'return SomenteNumero(event)', maxlength: '12', :class => "form-control", :placeholder => 'Matrícula'  %>
+      </div>
+      <div class="col">
+        <%= form.text_field :pasta, onkeypress: 'return SomenteNumero(event)', maxlength: '6', :class => "form-control", :placeholder => 'Pasta'  %>
+      </div>
+    </div>
+    <div class="form-row mb-4">
+      <div class="col">
+        <%= form.input :curso_id, :as => :select, :collection => Curso.all.collect { |curso| [curso.descricao, curso.id] }, :label => false, :prompt => 'Selecione um curso', input_html: {:class => "browser-default custom-select", :id => "curso_id"} %>
+      </div>
+      <div class="col" id="idPeriodo" style="display: none">        
+        <%= form.input :periodo, :as => :select, :collection => Curso.all.collect { |curso| [curso.quantidadePeriodo, curso.quantidadePeriodo] }, :label => false, :prompt => 'Selecione o periodo', input_html: {:class => "browser-default custom-select", :id => "periodo"} %>
+      </div>
+      <div class="col">
+        <%= form.label :turno, :class => 'pr-2' %>
+        <%= form.radio_button :turno, 'Diurno' %> Diurno
+        <%= form.radio_button :turno, 'Noturno' %> Noturno
+        <%= form.radio_button :turno, 'Integral' %> Integral
+      </div>
+    </div>
+    <div class="form-row mb-4">
+      <div class="col">
+        <%= form.text_field :email, type: 'email', placeholder:'Email', :class => "form-control" %>
+      </div>
+      <div class="col">
+        <%= form.text_field :telefone, onkeyup: 'telefone(this);', placeholder:'Telefone', :class => "form-control" %>
+      </div>
+      <div class="col">
+        <%= form.text_field :celular, onkeyup: 'celular(this);', placeholder:'Celular', :class => "form-control" %>
+      </div>
+    </div>
+    <div class="mb-4 col-md-6 offset-md-3">
+      <%= form.text_area :finalidadePedido, placeholder:'Informe o motivo da solicitação...', :class => "form-control", :maxlength => '220' %>
+    </div>
+    <div class="form-row mb-4" style="display: none">
+      <%= form.label :situacao_id %>
+      <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao %>
+    </div>
 
-  <div class="field">
-    <%= form.label :matricula %>
-    <%= form.text_field :matricula, onkeypress: 'return SomenteNumero(event)', maxlength: '12'   %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pasta %>
-    <%= form.text_field :pasta, onkeypress: 'return SomenteNumero(event)', maxlength: '6'  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :turno %>
-    <%= form.radio_button :turno, 'Diurno' %> Diurno
-    <%= form.radio_button :turno, 'Noturno' %> Noturno
-    <%= form.radio_button :turno, 'Integral' %> Integral
-  </div>
-
-  <div class="field">
-    <%= form.label :curso_id %>
-    <%= form.collection_select :curso_id, Curso.all.order(descricao: :asc), :id, :descricao, {:prompt => "Selecione:"}, {:id => "curso_id"} %>
-  </div>
-
-  <div class="field" id="idPeriodo" style="display: none">
-    <%= form.label :periodo, "Módulo/Período" %>
-    <%= form.collection_select :periodo, Curso.all.order(quantidadePeriodo: :asc), :quantidadePeriodo, :quantidadePeriodo, {:prompt => "Selecione:"}, {:id => "periodo"} %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email', placeholder:'aluno@exemplo.com' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :telefone %>
-    <%= form.text_field :telefone, onkeyup: 'telefone(this);', placeholder:'(xx) xxxx-xxxx' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :celular %>
-    <%= form.text_field :celular, onkeyup: 'celular(this);', placeholder:'(xx) xxxxx-xxxx' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :finalidadePedido, "Finalidade do pedido" %>
-    <%= form.text_area :finalidadePedido, placeholder:'Informe o motivo da solicitação...' %>
-  </div>
-
-  <div class="field" style="display: none">
-    <%= form.label :situacao_id %>
-    <%= form.collection_select :situacao_id, Situacao.all, :id, :descricao %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit :Enviar %>
-  </div>
+    <div class="actions text-center">
+      <%= form.submit 'Solicitar Documento', :class => 'btn green-default' %>
+    </div>
+  </section>
 <% end %>

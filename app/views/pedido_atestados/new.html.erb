@@ -1,5 +1,11 @@
-<h1>Solicitação de Atestado de Matrícula</h1>
+<i class="fa fa-user icone" aria-hidden="true"></i><strong><h7> Módulo Aluno</h7></strong>
+<%= link_to request.referer, :class => 'col-sm-1 pull-right btn green-default btn-sm text-white' do %>
+  <i class="fa fa-arrow-left pr-1" aria-hidden="true"></i>
+  Voltar
+<% end %>
+<hr/>
+
+
+<h3 class="py-3">Formulário de Solicitação</h3>
 
 <%= render 'form', pedido_atestado: @pedido_atestado %>
-
-<%= link_to "Voltar", aluno_path %>

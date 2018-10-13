@@ -23,6 +23,7 @@ body {
   width: 100%;
   background-color: #f4f4f4 !important;
   color: #333 !important;
+  padding-bottom: 100px;
 }
 #main {
   padding: 0 50px;
@@ -45,14 +46,14 @@ h1 {
 .btn-group {
   top: 30px;
 }
+.btn-group a {
+  padding: 20px 50px 20px 30px;
+}
 .btn-group .btn-menu {
   color: #ededed;
   background-color: #333;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-}
-.btn-group a {
-  padding: 10px 30px;
 }
 .btn-group .btn-menu2 {
   color: #ededed;
@@ -63,16 +64,19 @@ h1 {
   color: #333;
   background-color: #E9E7DA;
 }
-.input-group.md-form.form-sm.form-2 input.green-default-border  {
+.input-group.md-form.form-xs.form-2 input.green-default-border  {
     border: 1px solid #66AB8C;
 }
-.input-group.md-form.form-sm.form-2 input {
+.input-group.md-form.form-xs.form-2 input {
     border: 1px solid #bdbdbd;
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
 }
 .green-default{
   background-color: #66AB8C !important;
+}
+.dark-default{
+  background-color: #263238 !important;
 }
 #div-busca {
   background-color: #fff;
@@ -90,6 +94,11 @@ a.btn.pull-right {
   padding: 5px 10px !important;
 }
 
+.btn:hover {
+  background-color: #E9E7DA !important;
+  color: #333 !important;
+}
+
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 .btn-index {
@@ -105,10 +114,6 @@ a.btn.pull-right {
 }
 .btn-group-vertical a{
   margin-bottom: 10px;
-}
-.btn-group-vertical a:hover {
-  color: #333;
-  background-color: #E9E7DA;
 }
 .btn-group-vertical a:hover .fa{
   color: #333;
