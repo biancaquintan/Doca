@@ -1,0 +1,11 @@
+<%= simple_form_for(path, method: "get") do |form| %>
+  <div class="form-row mb-4">
+    <div class="col">
+      <%= form.input :turno, :as => :select, :collection => PedidoAtestado.all.collect { |pedido| [pedido.turno, pedido.turno] }.uniq, :label => false, :prompt => 'Selecione um turno', input_html: {:class => "browser-default custom-select", :name => "turno"} %>
+    </div>
+    <div class="col">
+      <%= form.input :nivel, :as => :select, :collection => Curso.all.collect { |curso| [curso.nivelEscolaridade, curso.nivelEscolaridade] }.uniq, :label => false, :prompt => 'Selecione um nível de Escolaridade', input_html: {:class => "browser-default custom-select", :name => "nivel"} %>
+    </div>
+  </div>
+  <%= form.submit 'Filtrar', :class => 'btn green-default' %>
+<% end %>
