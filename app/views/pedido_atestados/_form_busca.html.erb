@@ -1,11 +1,13 @@
 <%= simple_form_for(path, method: "get") do |form| %>
-  <div class="form-row mb-4">
-    <div class="col">
-      <%= form.input :turno, :as => :select, :collection => PedidoAtestado.all.collect { |pedido| [pedido.turno, pedido.turno] }.uniq, :label => false, :prompt => 'Selecione um turno', input_html: {:class => "browser-default custom-select", :name => "turno"} %>
+  <div class="form-row bg-gray mb-3">
+    <div class="col-md-3">
+      <%= form.input :turno, :as => :select, :label => false, :collection => PedidoAtestado.all.collect { |pedido| [pedido.turno, pedido.turno] }.uniq, :prompt => 'Selecione um turno', input_html: {:class => "browser-default custom-select", :name => "turno"} %>
     </div>
-    <div class="col">
-      <%= form.input :nivel, :as => :select, :collection => Curso.all.collect { |curso| [curso.nivelEscolaridade, curso.nivelEscolaridade] }.uniq, :label => false, :prompt => 'Selecione um nível de Escolaridade', input_html: {:class => "browser-default custom-select", :name => "nivel"} %>
+    <div class="col-md-3">
+      <%= form.input :nivel, :as => :select, :label => false, :collection => Curso.all.collect { |curso| [curso.nivelEscolaridade, curso.nivelEscolaridade] }.uniq, :prompt => 'Selecione um nível', input_html: {:class => "browser-default custom-select pull-left", :name => "nivel"} %>
+    </div>
+    <div>
+      <button class="btn btn-sm green-default btn-search" type="submit"><i class="fa fa-search"></i></button>
     </div>
   </div>
-  <%= form.submit 'Filtrar', :class => 'btn green-default' %>
 <% end %>

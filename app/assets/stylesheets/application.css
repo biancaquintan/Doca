@@ -97,7 +97,20 @@ a.btn.pull-right {
 .btn:hover {
   background-color: #E9E7DA !important;
   color: #333 !important;
+  border-color: #333 !important;
 }
+
+.bg-gray {
+  background-color: #353535;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.btn-search {
+  margin: 0 0 0 4px !important;
+  padding: 11px 18px !important;
+}
+
 
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 

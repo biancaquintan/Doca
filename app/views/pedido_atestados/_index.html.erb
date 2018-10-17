@@ -2,6 +2,8 @@
 
 <h3 class="py-3">Pedidos</h3>
 
+<%= render partial: 'pedido_atestados/form_busca', :locals => {:path => "pedidos_biblioteca_path"} %>
+
 <div class="list-group">
   <% @pedido_atestados.each do |pedido_atestado| %>
     <section class="list-group-item list-group-item-action flex-column align-items-start mb-1">
@@ -10,7 +12,7 @@
         <span class="pr-1 pt-2">3 days ago</span>
       </div>
 
-      <%= link_to pedido_atestado, :class => 'btn green-default text-white float-right px-3 botao', :style => 'border-radius: 20px' do %>
+      <%= link_to pedido_atestado, :class => 'btn btn-primary text-white float-right px-3 botao', :style => 'border-radius: 20px' do %>
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
 
