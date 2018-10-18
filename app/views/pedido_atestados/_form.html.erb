@@ -24,11 +24,11 @@
       </div>
     </div>
     <div class="form-row mb-4">
-      <div class="col">
+      <div class="col-md-4">
         <%= form.input :curso_id, :as => :select, :collection => Curso.all.collect { |curso| [curso.descricao, curso.id] }, :label => false, :prompt => 'Selecione um curso', input_html: {:class => "browser-default custom-select", :id => "curso_id"} %>
       </div>
-      <div class="col" id="idPeriodo" style="display: none">        
-        <%= form.input :periodo, :as => :select, :collection => Curso.all.collect { |curso| [curso.quantidadePeriodo, curso.quantidadePeriodo] }, :label => false, :prompt => 'Selecione o periodo', input_html: {:class => "browser-default custom-select", :id => "periodo"} %>
+      <div class="col" id="idPeriodo" style="display: none">
+        <%= form.input :periodo, :as => :select, :collection => Curso.all.collect { |curso| [curso.quantidadePeriodo, curso.quantidadePeriodo] }, :label => false, input_html: {:class => "browser-default custom-select", :id => "periodo"} %>
       </div>
       <div class="col">
         <%= form.label :turno, :class => 'pr-2' %>
