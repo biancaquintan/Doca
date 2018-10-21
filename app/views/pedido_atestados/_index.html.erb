@@ -26,21 +26,17 @@
 
 <div class="list-group">
   <% @pedido_atestados.each do |pedido_atestado| %>
-    <section class="list-group-item list-group-item-action flex-column align-items-start mb-1">
-      <div class="d-flex w-100 justify-content-between mb-3 badge" style="background-color: #ededed; color: #333 !important;">
-        <h6 class="pl-1 pt-2">Pasta <%= pedido_atestado.pasta %></h6>
-        <span class="pr-1 pt-2">3 days ago</span>
+    <section class="list-group-item flex-column align-items-start mb-1 p-2">
+      <div class="d-flex w-100 mb-2 justify-content-between badge badge-light p-1">
+        <span class="badge green-default" style="font-size: 14px">Nº Pasta <%= pedido_atestado.pasta %></span>
+        <small style="font-size: 10px; padding: 5px;"><%= pedido_atestado.situacao.descricao %> <b>(há 3 dias)</b></small>
       </div>
 
-      <%= link_to pedido_atestado, :class => 'btn btn-primary text-white float-right px-3 botao', :style => 'border-radius: 20px', data: {target: "#modal_detalhes", toggle: "modal",  index: "0"} do %>
+      <%= link_to pedido_atestado, :class => 'btn btn-primary text-white float-right px-3 btn-circle', data: {target: "#modal_detalhes", toggle: "modal",  index: "0"} do %>
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
 
-
-      <p class="pl-2 mb-1"><%= pedido_atestado.nome %></p>
-      <p class="pl-2 mb-1 text-uppercase"><%= pedido_atestado.curso.descricao %></p>
-      <p class="pl-2 mb-1"> Situação: <%= pedido_atestado.situacao.descricao %></p>
-
+      <p class="pl-2"><%= pedido_atestado.nome %><br><b><%= pedido_atestado.curso.descricao %></b></p>
     </section>
   <% end %>
 </div>

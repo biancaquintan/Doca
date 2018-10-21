@@ -1,9 +1,12 @@
-<i class="fa fa-book icone" aria-hidden="true"></i><strong><h7> Módulo da Biblioteca</h7></strong>
+<%= link_to biblioteca_path, :class => 'link-path' do %>
+  <i class="fa fa-book icone" aria-hidden="true"></i><strong><h7> Módulo Biblioteca</h7></strong>
+<% end %>
+
 <%= link_to destroy_usuario_session_path, method: :delete, :class => 'col-sm-1 pull-right btn dark-default btn-sm text-white' do %>
   Sair
   <i class="fa fa-sign-out pl-1" aria-hidden="true"></i>
 <% end %>
-<%= link_to request.referer, :class => 'col-sm-1 pull-right btn green-default btn-sm text-white' do %>
+<%= link_to biblioteca_path, :class => 'col-sm-1 pull-right btn green-default btn-sm text-white' do %>
   <i class="fa fa-arrow-left pr-1" aria-hidden="true"></i>
   Voltar
 <% end %>

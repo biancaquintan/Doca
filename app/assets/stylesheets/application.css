@@ -35,12 +35,11 @@ h1 {
 .nav-color{
   background-color: #E9E7DA;
 }
-#navbar a {
+#navbar span {
   font-weight: 900;
   color: #333;
 }
 #navbar .navbar-brand:hover {
-  color: #66AB8C;
   background-color: transparent;
 }
 .btn-group {
@@ -79,7 +78,6 @@ h1 {
   background-color: #263238 !important;
 }
 #div-busca {
-  background-color: #fff;
   max-width: 400px;
   margin: 100px auto;
 }
@@ -101,7 +99,7 @@ a.btn.pull-right {
 }
 
 .bg-gray {
-  background-color: #353535;
+  background-color: #263238;
   border-radius: 8px;
   padding: 10px;
 }
@@ -111,6 +109,21 @@ a.btn.pull-right {
   padding: 11px 18px !important;
 }
 
+.div-modal-default {
+  border-radius: 5px;
+  background-color: #ededed;
+}
+
+.link-path:hover, .link-path:visited {
+  background-color: transparent;
+  text-decoration: none;
+  color: #333;
+}
+
+.btn-circle {
+  border-radius: 20px !important;
+  margin: 0 5px !important;
+}
 
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
