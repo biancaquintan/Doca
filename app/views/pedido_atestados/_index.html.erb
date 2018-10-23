@@ -1,23 +1,42 @@
+<!-- Modal -->
+<div class="modal fade" id="modal_detalhes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content container-fluid">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">DETALHES</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render "pedido_atestados/detalhes_pedido" %>
+      </div>
+      <div class="modal-footer">
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <h3 class="py-3">Pedidos</h3>
 
+<%= render partial: 'pedido_atestados/form_busca', :locals => {:path => "pedidos_biblioteca_path"} %>
+
 <div class="list-group">
   <% @pedido_atestados.each do |pedido_atestado| %>
-    <section class="list-group-item list-group-item-action flex-column align-items-start mb-1">
-      <div class="d-flex w-100 justify-content-between mb-3 badge" style="background-color: #ededed; color: #333 !important;">
-        <h6 class="pl-1 pt-2">Pasta <%= pedido_atestado.pasta %></h6>
-        <span class="pr-1 pt-2">3 days ago</span>
+    <section class="list-group-item flex-column align-items-start mb-1 p-2">
+      <div class="d-flex w-100 mb-2 justify-content-between badge badge-light p-1">
+        <span class="badge green-default" style="font-size: 14px">Nº Pasta <%= pedido_atestado.pasta %></span>
+        <small style="font-size: 10px; padding: 5px;"><%= pedido_atestado.situacao.descricao %> <b>(há 3 dias)</b></small>
       </div>
 
-      <%= link_to pedido_atestado, :class => 'btn green-default text-white float-right px-3 botao', :style => 'border-radius: 20px' do %>
+      <%= link_to pedido_atestado, :class => 'btn btn-primary text-white float-right px-3 btn-circle', data: {target: "#modal_detalhes", toggle: "modal",  index: "0"} do %>
       <i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
 
-      <p class="pl-2 mb-1"><%= pedido_atestado.nome %></p>
-      <p class="pl-2 mb-1 text-uppercase"><%= pedido_atestado.curso.descricao %></p>
-      <p class="pl-2 mb-1"> Situação: <%= pedido_atestado.situacao.descricao %></p>
-
+      <p class="pl-2"><%= pedido_atestado.nome %><br><b><%= pedido_atestado.curso.descricao %></b></p>
     </section>
   <% end %>
 </div>
