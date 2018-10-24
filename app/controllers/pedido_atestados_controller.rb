@@ -32,6 +32,9 @@ class PedidoAtestadosController < ApplicationController
   # GET /pedido_atestados/1
   # GET /pedido_atestados/1.json
   def show
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   # GET /pedido_atestados/new

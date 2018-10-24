@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get 'pedidos_registro' => 'registro_academicos#pedidos'
   get 'pedidos_biblioteca' => 'bibliotecas#pedidos'
   root 'home#index'
+  get 'bibliotecas/pegaPedido/:id' => "bibliotecas#pegaPedido", as: "bibliotecas_pegaPedido"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

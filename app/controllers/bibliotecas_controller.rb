@@ -8,4 +8,11 @@ class BibliotecasController < ApplicationController
 
   def pedidos
   end
+
+  def pegaPedido
+    @pedido = PedidoAtestado.find(params[:id])
+    respond_to do |format|      
+      format.js
+    end
+  end
 end
