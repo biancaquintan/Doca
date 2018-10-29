@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modal_detalhes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_detalhes" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content container-fluid">
       <div class="modal-header">
@@ -8,8 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <%# <%= render "pedido_atestados/detalhes_pedido" %>
+      <div class="modal-body" id="detalhes_pedido">
       </div>
       <div class="modal-footer">
       </div>
@@ -32,7 +31,7 @@
         <small style="font-size: 10px; padding: 5px;"><%= pedido_atestado.situacao.descricao %> <b>(há 3 dias)</b></small>
       </div>
 
-      <%= link_to bibliotecas_pegaPedido_path, :class => 'btn btn-primary text-white float-right px-3 btn-circle btn-detalhe', data: {target: "#modal_detalhes", toggle: "modal",  index: "0", url: bibliotecas_pegaPedido_path, id: pedido_atestado.id} do %>
+      <%= link_to '#', :class => 'btn btn-primary text-white float-right px-3 btn-circle btn-detalhes', data: {target: "#modal_detalhes", toggle: "modal", url: pedido_atestados_get_pedido_path(pedido_atestado.id), id: pedido_atestado.id} do %>
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       <% end %>
 

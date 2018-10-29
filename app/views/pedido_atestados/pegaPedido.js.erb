@@ -1,4 +1,0 @@
-$( "#modal_detalhes" ).fadeToggle( "fast", function() {
-  $('#modal_detalhes').html('<%= escape_java render(partial: "pedido_atestados/detalhes_pedido") %>').fadeIn(500);
-  //$('#pagination').html('<%= escape_java(paginate(@pedido, :remote => true).to_s) %>').fadeIn(500);
-});
