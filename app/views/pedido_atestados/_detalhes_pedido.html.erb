@@ -1,6 +1,6 @@
 <div class="container-fluid py-3 z-depth-1 div-modal-default">
   <div class="form-row pull-right">
-    <kbd class="green-default"><small>Data do pedido: 10/10/2018</small></kbd>
+    <kbd class="green-default"><small>Data do pedido: <%= @pedido.created_at.strftime('%d/%m/%Y') %></small></kbd>
   </div>
 
   <div class="form-row mb-1">
