@@ -117,7 +117,7 @@ pt-BR:
       decimal_units:
         format: "%n %u"
         units:
-          unit: ""     
+          unit: ""
           thousand: "mil"
           million:
             one: milhão
@@ -142,11 +142,7 @@ pt-BR:
   # ActiveRecord
   activerecord:
     errors:
-      template:
-        header:
-          one: "Não foi possível gravar %{model}: 1 erro"
-          other: "Não foi possível gravar %{model}: %{count} erros."
-        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+      format: "%{attribute} %{message}"
       messages:
         inclusion: "não está incluído na lista"
         exclusion: "não está disponível"
@@ -169,3 +165,8 @@ pt-BR:
         odd: "deve ser ímpar"
         even: "deve ser par"
         record_invalid: "A validação falhou: %{errors}"
+      template:
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+          body: "Por favor, verifique o(s) seguinte(s) campo(s):"
