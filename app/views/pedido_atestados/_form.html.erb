@@ -1,16 +1,15 @@
+<% if pedido_atestado.errors.any? %>
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <ul>
+    <% pedido_atestado.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= simple_form_for(@pedido_atestado, local: true) do |form| %>
-  <% if pedido_atestado.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pedido_atestado.errors.count, "error") %> prohibited this pedido_atestado from being saved:</h2>
-
-      <ul>
-      <% pedido_atestado.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <section class="form-default">
     <div class="form-row mb-4">
       <div class="col">
