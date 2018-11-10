@@ -32,6 +32,9 @@ class PedidoAtestadosController < ApplicationController
   # GET /pedido_atestados/1
   # GET /pedido_atestados/1.json
   def show
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   # GET /pedido_atestados/new
@@ -82,6 +85,10 @@ class PedidoAtestadosController < ApplicationController
       format.html { redirect_to pedido_atestados_url, notice: 'Pedido atestado was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def get_pedido
+    @pedido = PedidoAtestado.find(params[:id])
   end
 
   private
