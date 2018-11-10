@@ -16,9 +16,17 @@
       <nav  id="navbar" class="navbar fixed-top navbar-dark nav-color">
         <span class="navbar-brand p-1" style="border: solid 1px #333; border-radius: 5px">Protótipo TCC</span>
       </nav>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
     </header>
+
+    <div class="container-fluid" style="margin: 50px 0;">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, :style => "text-align: center;", :class => "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable" do %>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= msg %>
+        <% end %>
+      <% end %>
+    </div>
+
     <section class="container-fluid" id="main">
       <%= yield %>
     </section>
