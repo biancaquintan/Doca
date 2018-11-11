@@ -24,14 +24,34 @@
   </div>
 
   <div class="form-row mb-1">
-    <strong class="text-left pr-2">Finalidade do pedido:</strong>
-    <%= @pedido.finalidadePedido %>
+    <strong class="text-left pr-2">Período:</strong>
+    <%= @pedido.periodo %>
   </div>
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Turno:</strong>
+    <%= @pedido.turno %>
+  </div>
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Ano Letivo:</strong>
+    <%= @pedido.anoLetivo %>
+  </div>  
 
   <div class="form-row mb-1">
     <strong class="text-left pr-2">Contatos:</strong>
     <%= @pedido.telefone %> | <%= @pedido.celular %>
   </div>
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Email:</strong>
+    <%= @pedido.email %>
+  </div>  
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Finalidade do pedido:</strong>
+    <%= @pedido.finalidadePedido %>
+  </div>  
 </div>
 
 <%= render partial: 'pedido_atestados/edit', pedido_atestado: @pedido %>
