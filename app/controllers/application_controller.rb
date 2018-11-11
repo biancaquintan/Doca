@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
       sign_out(current_usuario)
     end
   end
-
+ 
   # Filtra os pedidos para a tela de acesso da biblioteca ou Registro
   def filter_pedido_atestado(acesso)
     @turno = params[:turno]
