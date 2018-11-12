@@ -54,8 +54,8 @@ class PedidoAtestadosController < ApplicationController
 
     respond_to do |format|
       if @pedido_atestado.save
-        format.html { redirect_to @pedido_atestado, notice: 'Pedido atestado was successfully created.' }
-        format.json { render :show, status: :created, location: @pedido_atestado }
+        format.json { }
+        format.html { redirect_to aluno_path(), notice: 'Pedido encaminhado com sucesso.' }
       else
         format.html { render :new }
         format.json { render json: @pedido_atestado.errors, status: :unprocessable_entity }
