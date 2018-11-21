@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def is_bibliotecario?
     unless current_usuario.tipo == "biblioteca"
       respond_to do |format|
-        format.html { redirect_to root_path, notice: 'Sem permissão!.' }
+        format.html { redirect_to root_path, notice: 'Permissão negada! O usuário não pertence ao módulo Biblioteca.' }
       end
       sign_out(current_usuario)
     end
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def is_registro?
     unless current_usuario.tipo == "registro"
       respond_to do |format|
-        format.html { redirect_to root_path, notice: 'Sem permissão!.' }
+        format.html { redirect_to root_path, notice: 'Permissão negada! O usuário não pertence ao módulo Registro Acadêmico.' }
       end
       sign_out(current_usuario)
     end
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     @turno = params[:turno]
     @nivel = params[:nivel]
     filtro = acesso
-    
+
     if @turno.to_s != ""
       filtro = filtro + " and turno = '" + @turno.to_s + "'"
     end
@@ -39,6 +39,6 @@ class ApplicationController < ActionController::Base
       filtro = filtro + " and curso_id in (" + idCurso + ")"
     end
 
-    @pedido_atestados = PedidoAtestado.where(filtro).order("created_at")    
+    @pedido_atestados = PedidoAtestado.where(filtro).order("created_at")
   end
 end
