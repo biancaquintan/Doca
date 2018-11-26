@@ -18,11 +18,11 @@ pt-BR:
       unconfirmed: 'Antes de continuar, confirme a sua conta.'
     mailer:
       confirmation_instructions:
-        subject: '[Espaço da Oportunidade] Instruções de confirmação'
+        subject: 'Instruções de confirmação'
       reset_password_instructions:
-        subject: '[Espaço da Oportunidade] Instruções de troca de senha'
+        subject: 'Instruções de troca de senha'
       unlock_instructions:
-        subject: '[Espaço da Oportunidade] Instruções de desbloqueio'
+        subject: 'Instruções de desbloqueio'
     omniauth_callbacks:
       failure: 'Não foi possível autenticá-lo como %{kind} porque "%{reason}".'
       success: 'Autenticado com sucesso com uma conta de %{kind}.'
@@ -33,7 +33,7 @@ pt-BR:
       updated: 'Sua senha foi alterada com sucesso. Você está logado.'
       updated_not_active: 'Sua senha foi alterada com sucesso.'
     registrations:
-      destroyed: 'Tchau! Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.'
+      destroyed: 'Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.'
       destroyed_by_admin: 'Cadastro removido com sucesso.'
       created: 'Usuário criado com sucesso.'
       signed_up: 'Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.'
@@ -53,9 +53,6 @@ pt-BR:
     user_sessions:
       usuario:
         signed_in: "Login efetuado com sucesso."
-    funcionarios_registrations:
-      funcionario:
-        updated: 'Sua conta foi atualizada com sucesso.'
 
   errors:
     messages:

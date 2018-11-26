@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   def is_bibliotecario?
     unless current_usuario.tipo == "biblioteca"
       respond_to do |format|
-        format.html { redirect_to root_path, notice: 'Permissão negada! O usuário não pertence ao módulo Biblioteca.' }
+        flash[:error] = 'Permissão negada! O usuário não pertence ao módulo Biblioteca.'
+        format.html { redirect_to root_path }
       end
       sign_out(current_usuario)
     end
@@ -13,7 +14,8 @@ class ApplicationController < ActionController::Base
   def is_registro?
     unless current_usuario.tipo == "registro"
       respond_to do |format|
-        format.html { redirect_to root_path, notice: 'Permissão negada! O usuário não pertence ao módulo Registro Acadêmico.' }
+        flash[:error] = 'Permissão negada! O usuário não pertence ao módulo Registro Acadêmico.'
+        format.html { redirect_to root_path }
       end
       sign_out(current_usuario)
     end

@@ -27,8 +27,8 @@
     </header>
 
     <div class="container-fluid" style="margin-top: 50px;">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, :style => "text-align: center;", :class => "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable" do %>
+      <% flash.each do |key, msg| %>
+        <%= content_tag :div, :style => "text-align: center;", :class => "alert alert-#{ key == 'error' ? "danger" : "success" } alert-dismissable" do %>
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
           <%= msg %>
         <% end %>
