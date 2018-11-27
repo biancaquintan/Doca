@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :usuarios
-  resources :pedido_atestados
 
   get 'cursos' => 'cursos#find_by_curso'
   get 'aluno' => 'alunos#index'
@@ -11,5 +10,7 @@ Rails.application.routes.draw do
   get 'pedidos_biblioteca' => 'bibliotecas#pedidos'
   root 'home#index'
   get 'pedido_atestados/get_pedido/:id' => "pedido_atestados#get_pedido", as: "pedido_atestados_get_pedido"
+  get 'pedido_atestados/get_situacao' => "pedido_atestados#get_situacao", as: "pedido_atestados_get_situacao"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :pedido_atestados
 end

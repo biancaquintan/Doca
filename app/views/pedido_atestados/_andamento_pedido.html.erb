@@ -1,0 +1,50 @@
+<div class="alert" role="alert">
+  <section>
+    <small><strong>Pasta:</strong> <%= @pedido_atestado.pasta %></small>
+    <br>
+    <small><strong>Data do pedido:</strong> <%= @pedido_atestado.created_at.to_date %></small>
+    <hr>
+    <p id="msg-andamento" class="text-center"></p>
+  </section>
+</div>
+
+<div class="progress my-4 mx-5" style="height: 30px; font-weight: bold">
+  <div id="status-bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><%= @pedido_atestado.situacao.descricao %></div>
+</div>
+
+
+<script type="text/javascript">
+  var newprogress;
+  let mensagem;
+
+  switch (<%= @pedido_atestado.situacao_id %>) {
+    case 2:
+      newprogress = 40;
+      mensagem = "Encaminhado ao Registro Acadêmico para digitalização."
+      break;
+
+    case 3:
+      newprogress = 100;
+      $('#status-bar').css('background-color', 'red');
+      mensagem = "Nada Consta recusado devido a pendências no setor bibliotecário. Verifique em http://terminal.biblioteca.iff.edu.br/"
+      break;
+
+    case 4:
+      newprogress = 80;
+      mensagem = "O documento encontra-se disponível no Registro Acadêmico."
+      break;
+
+    case 5:
+      newprogress = 100;
+      mensagem = "Documento retirado."
+      $('#status-bar').css('background-color', 'green');
+      break;
+
+    default:
+      newprogress = 15;
+      mensagem = "Aguardando liberação do Nada Consta pelo setor bibliotecário."
+  }
+
+  document.getElementById('msg-andamento').innerHTML = mensagem;
+  $('#status-bar').attr('aria-valuenow', newprogress).css('width', newprogress + "%");
+</script>

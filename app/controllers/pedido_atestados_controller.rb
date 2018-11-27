@@ -91,6 +91,10 @@ class PedidoAtestadosController < ApplicationController
     @pedido = PedidoAtestado.find(params[:id])
   end
 
+  def get_situacao
+    @pedido_atestado = PedidoAtestado.where(pasta: params[:pasta]).last
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pedido_atestado
