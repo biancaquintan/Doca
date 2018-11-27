@@ -2,7 +2,7 @@
   <section>
     <small><strong>Pasta:</strong> <%= @pedido_atestado.pasta %></small>
     <br>
-    <small><strong>Data do pedido:</strong> <%= @pedido_atestado.created_at.to_date %></small>
+    <small><strong>Data do pedido:</strong> <%= @pedido_atestado.created_at.strftime("%d/%m/%Y") %></small>
     <hr>
     <p id="msg-andamento" class="text-center"></p>
   </section>
