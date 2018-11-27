@@ -38,9 +38,6 @@ gem "font-awesome-rails"
 
 gem 'simple_form'
 
-gem 'delayed_job_active_record'
-gem 'progress_job'
-
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
