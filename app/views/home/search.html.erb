@@ -20,15 +20,14 @@
   <i class="fa fa-arrow-left pr-1" aria-hidden="true"></i>
   Voltar
 <% end %>
-<h1 style="font-weight: bold;">Buscar Pedido</h1>
+<h1 class="font-weight-bold">Buscar Pedido</h1>
 <p> Localize e verifique o andamento dos pedidos referentes ao nº de pasta.</p>
-<hr />
+<hr/>
 
 <div id="div-busca" class="exactCenter">
   <div class="input-group form-xs">
-    <input id="search" class="form-control my-0 py-1" type="text" placeholder="Digite um nº de pasta" aria-label="Search">
+    <input id="search" class="form-control my-0 py-1" type="text" placeholder="Digite um nº de pasta" aria-label="Search" onkeypress="return SomenteNumero(event)" maxlength="6">
     <%= link_to "#", :id => 'btn-search', :class => 'btn btn-primary px-3 btn-circle', data: {target: "#modal_andamento", toggle: "modal", url: pedido_atestados_get_situacao_path()} do %>
-    <i class="fa fa-search" aria-hidden="true"></i>
-    <% end %>
+    <i class="fa fa-search" aria-hidden="true"></i><% end %>
   </div>
 </div>
