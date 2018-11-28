@@ -1,0 +1,13 @@
+<%= simple_form_for(@pedido, local: true) do |form| %>
+  <div class="py-3 z-depth-1 div-modal-default green-default mt-3">
+    <h1>Situação do Pedido</h1>
+
+    <% @situacoes.each do |situacao| %>
+      <%= form.radio_button :situacao_id, situacao.id %> <%= situacao.descricao %>
+    <% end %>
+  </div>
+
+  <div class="actions text-center py-2">
+    <%= form.submit 'Atualizar Situação', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

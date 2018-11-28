@@ -25,10 +25,17 @@ class ApplicationController < ActionController::Base
   def filter_pedido_atestado(acesso)
     @turno = params[:turno]
     @nivel = params[:nivel]
-    filtro = acesso
+    @situacao = params[:situacao_id]
+    @situacao_busca = Situacao.where("id in #{acesso}")
+
+    if @situacao.to_s != ""
+      filtro = "situacao_id = #{@situacao}"
+    else
+      filtro = "situacao_id in #{acesso}"
+    end
 
     if @turno.to_s != ""
-      filtro = filtro + " and turno = '" + @turno.to_s + "'"
+      filtro += " and turno = '" + @turno.to_s + "'"
     end
 
     if @nivel.to_s != ""
@@ -38,7 +45,7 @@ class ApplicationController < ActionController::Base
         idCurso = idCurso + curso.id.to_s + ","
       end
       idCurso = idCurso[0..(idCurso.length-2)]
-      filtro = filtro + " and curso_id in (" + idCurso + ")"
+      filtro += " and curso_id in (" + idCurso + ")"
     end
 
     @pedido_atestados = PedidoAtestado.where(filtro).order("created_at")

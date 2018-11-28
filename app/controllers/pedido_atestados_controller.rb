@@ -32,9 +32,6 @@ class PedidoAtestadosController < ApplicationController
   # GET /pedido_atestados/1
   # GET /pedido_atestados/1.json
   def show
-    # respond_to do |format|
-    #   format.js
-    # end
   end
 
   # GET /pedido_atestados/new
@@ -66,12 +63,18 @@ class PedidoAtestadosController < ApplicationController
   # PATCH/PUT /pedido_atestados/1
   # PATCH/PUT /pedido_atestados/1.json
   def update
+    if current_usuario.tipo == "biblioteca" then
+      @pagina_home = pedidos_biblioteca_path
+    else
+      @pagina_home = pedidos_registro_path
+    end
+
     respond_to do |format|
       if @pedido_atestado.update(pedido_atestado_params)
-        format.html { redirect_to @pedido_atestado, notice: 'Pedido atualizado com sucesso.' }
-        format.json { render :show, status: :ok, location: @pedido_atestado }
+        format.html { redirect_to @pagina_home, notice: 'Pedido atualizado com sucesso!' }
+        format.json { render @pagina_home, status: :ok, location: @pedido_atestado }
       else
-        format.html { render :edit }
+        format.html { render @pagina_home }
         format.json { render json: @pedido_atestado.errors, status: :unprocessable_entity }
       end
     end
@@ -89,6 +92,11 @@ class PedidoAtestadosController < ApplicationController
 
   def get_pedido
     @pedido = PedidoAtestado.find(params[:id])
+    if [1, 3].include? @pedido.situacao_id then
+      @situacoes = Situacao.find(1,2,3)
+    else
+      @situacoes = Situacao.find(2,4,5)
+    end
   end
 
   def get_situacao
