@@ -6,6 +6,10 @@
     <div class="col-md-3">
       <%= form.input :nivel, :as => :select, :label => false, :collection => Curso.all.collect { |curso| [curso.nivelEscolaridade, curso.nivelEscolaridade] }.uniq, :prompt => 'Selecione um nível', input_html: {:class => "browser-default custom-select pull-left", :name => "nivel"} %>
     </div>
+    <div class="col-md-3">    
+      <%= form.input :situacao_id, :as => :select, :label => false, :collection => @situacao_busca.collect { |situacao| [situacao.descricao, 
+        situacao.id] }.uniq, :prompt => 'Selecione a situação', input_html: {:class => "browser-default custom-select pull-left", :name => "situacao_id"} %>
+    </div>
     <div>
       <button class="btn btn-sm green-default btn-search btn-circle" type="submit"><i class="fa fa-search"></i></button>
     </div>

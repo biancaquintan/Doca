@@ -17,8 +17,6 @@
   </div>
 </div>
 
-<p id="notice"><%= notice %></p>
-
 <h3 class="py-3">Pedidos</h3>
 
 <%= render partial: 'pedido_atestados/form_busca', :locals => {:path => "pedidos_biblioteca_path"} %>
@@ -28,7 +26,7 @@
     <section class="list-group-item flex-column align-items-start mb-1 p-2">
       <div class="d-flex w-100 mb-2 justify-content-between badge badge-light p-1">
         <span class="badge green-default" style="font-size: 14px">Nº Pasta <%= pedido_atestado.pasta %></span>
-        <small style="font-size: 10px; padding: 5px;"><%= pedido_atestado.situacao.descricao %> <b>(há 3 dias)</b></small>
+        <small style="font-size: 10px; padding: 5px;">Solicitado há <%= (Date.parse(Date.current.to_s) - Date.parse(pedido_atestado.created_at.to_s)).to_i %> dia(s) - <b class="text-uppercase">[ <%= pedido_atestado.situacao.descricao %> ]</b></small>
       </div>
 
       <%= link_to '#', :class => 'btn btn-primary text-white float-right px-3 btn-circle btn-detalhes', data: {target: "#modal_detalhes", toggle: "modal", url: pedido_atestados_get_pedido_path(pedido_atestado.id), id: pedido_atestado.id} do %>

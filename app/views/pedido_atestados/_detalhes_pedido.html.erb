@@ -1,6 +1,6 @@
 <div class="container-fluid py-3 z-depth-1 div-modal-default">
   <div class="form-row pull-right">
-    <kbd class="green-default"><small>Data do pedido: 10/10/2018</small></kbd>
+    <kbd class="green-default"><small>Data do pedido: <%= @pedido.created_at.strftime('%d/%m/%Y') %></small></kbd>
   </div>
 
   <div class="form-row mb-1">
@@ -24,21 +24,34 @@
   </div>
 
   <div class="form-row mb-1">
-    <strong class="text-left pr-2">Finalidade do pedido:</strong>
-    <%= @pedido.finalidadePedido %>
+    <strong class="text-left pr-2">Período:</strong>
+    <%= @pedido.periodo %>
   </div>
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Turno:</strong>
+    <%= @pedido.turno %>
+  </div>
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Ano Letivo:</strong>
+    <%= @pedido.anoLetivo %>
+  </div>  
 
   <div class="form-row mb-1">
     <strong class="text-left pr-2">Contatos:</strong>
     <%= @pedido.telefone %> | <%= @pedido.celular %>
   </div>
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Email:</strong>
+    <%= @pedido.email %>
+  </div>  
+
+  <div class="form-row mb-1">
+    <strong class="text-left pr-2">Finalidade do pedido:</strong>
+    <%= @pedido.finalidadePedido %>
+  </div>  
 </div>
 
-<div class="py-3 z-depth-1 div-modal-default green-default mt-3">
-  <strong class="col-md-3 text-left py-1">Situação:</strong>
-  <%= @pedido.situacao.descricao %>
-</div>
-
-<div class="text-center py-2">
-  <%= link_to 'Atualizar situação', pedido_atestados_path, class: "btn btn-sm btn-primary" %>
-</div>
+<%= render partial: 'pedido_atestados/edit', pedido_atestado: @pedido %>
