@@ -1,17 +1,16 @@
+<% if pedido_atestado.errors.any? %>
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <ul>
+    <% pedido_atestado.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= simple_form_for(@pedido_atestado, local: true) do |form| %>
-  <% if pedido_atestado.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pedido_atestado.errors.count, "error") %> prohibited this pedido_atestado from being saved:</h2>
-
-      <ul>
-      <% pedido_atestado.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <section style="border: 2px solid #ededed; padding: 10px; border-radius: 5px;">
+  <section class="form-default">
     <div class="form-row mb-4">
       <div class="col">
         <%= form.text_field :nome, :class => "form-control", :placeholder => 'Nome' %>
@@ -30,13 +29,26 @@
       <div class="col" id="idPeriodo" style="display: none">
         <%= form.input :periodo, :as => :select, :collection => Curso.all.collect { |curso| [curso.quantidadePeriodo, curso.quantidadePeriodo] }, :label => false, input_html: {:class => "browser-default custom-select", :id => "periodo"} %>
       </div>
+
       <div class="col">
-        <%= form.label :turno, :class => 'pr-2' %>
-        <%= form.radio_button :turno, 'Diurno' %> Diurno
-        <%= form.radio_button :turno, 'Noturno' %> Noturno
-        <%= form.radio_button :turno, 'Integral' %> Integral
+        <%= form.label :turno, "Turno", :class => 'px-4 pt-2' %>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" value="Diurno" name="pedido_atestado[turno]" class="custom-control-input" id="pedido_atestado_turno_diurno">
+          <label class="custom-control-label" for="pedido_atestado_turno_diurno">Diurno</label>
+        </div>
+
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" value="Noturno" name="pedido_atestado[turno]" class="custom-control-input" id="pedido_atestado_turno_noturno">
+          <label class="custom-control-label" for="pedido_atestado_turno_noturno">Noturno</label>
+        </div>
+
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" value="Integral" name="pedido_atestado[turno]" class="custom-control-input" id="pedido_atestado_turno_integral">
+          <label class="custom-control-label" for="pedido_atestado_turno_integral">Integral</label>
+        </div>
       </div>
     </div>
+
     <div class="form-row mb-4">
       <div class="col">
         <%= form.text_field :email, type: 'email', placeholder:'Email', :class => "form-control" %>

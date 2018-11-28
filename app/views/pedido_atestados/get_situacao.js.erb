@@ -1,0 +1,3 @@
+$( "#andamento_pedido" ).fadeToggle( "fast", function() {
+  $('#andamento_pedido').html('<%= escape_javascript render(partial: "pedido_atestados/andamento_pedido") %>').fadeIn(500);
+});

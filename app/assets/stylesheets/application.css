@@ -125,6 +125,19 @@ a.btn.pull-right {
   margin: 0 5px !important;
 }
 
+.form-default {
+  border: 2px solid #ededed;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.modal-body{
+  background-color: #ffff;
+  border-radius: 5px;
+}
+.modal-content{
+  background-color: #ededed !important;
+}
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 .btn-index {

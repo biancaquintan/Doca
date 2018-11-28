@@ -41,7 +41,7 @@ class PedidoAtestadosController < ApplicationController
   end
 
   # GET /pedido_atestados/1/edit
-  def edit    
+  def edit
   end
 
   # POST /pedido_atestados
@@ -51,8 +51,8 @@ class PedidoAtestadosController < ApplicationController
 
     respond_to do |format|
       if @pedido_atestado.save
-        format.html { redirect_to @pedido_atestado, notice: 'Pedido atestado was successfully created.' }
-        format.json { render :show, status: :created, location: @pedido_atestado }
+        format.json { }
+        format.html { redirect_to aluno_path(), notice: 'Pedido encaminhado com sucesso.' }
       else
         format.html { render :new }
         format.json { render json: @pedido_atestado.errors, status: :unprocessable_entity }
@@ -63,15 +63,15 @@ class PedidoAtestadosController < ApplicationController
   # PATCH/PUT /pedido_atestados/1
   # PATCH/PUT /pedido_atestados/1.json
   def update
-    if current_usuario.tipo == "biblioteca" then 
+    if current_usuario.tipo == "biblioteca" then
       @pagina_home = pedidos_biblioteca_path
-    else 
+    else
       @pagina_home = pedidos_registro_path
     end
-    
+
     respond_to do |format|
       if @pedido_atestado.update(pedido_atestado_params)
-        format.html { redirect_to @pagina_home, notice: 'Pedido atualizado com sucesso!.' }
+        format.html { redirect_to @pagina_home, notice: 'Pedido atualizado com sucesso!' }
         format.json { render @pagina_home, status: :ok, location: @pedido_atestado }
       else
         format.html { render @pagina_home }
@@ -85,18 +85,22 @@ class PedidoAtestadosController < ApplicationController
   def destroy
     @pedido_atestado.destroy
     respond_to do |format|
-      format.html { redirect_to pedido_atestados_url, notice: 'Pedido atestado was successfully destroyed.' }
+      format.html { redirect_to pedido_atestados_url, notice: 'Pedido excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
 
   def get_pedido
-    @pedido = PedidoAtestado.find(params[:id])    
+    @pedido = PedidoAtestado.find(params[:id])
     if [1, 3].include? @pedido.situacao_id then
       @situacoes = Situacao.find(1,2,3)
     else
       @situacoes = Situacao.find(2,4,5)
     end
+  end
+
+  def get_situacao
+    @pedido_atestado = PedidoAtestado.where(pasta: params[:pasta]).last
   end
 
   private

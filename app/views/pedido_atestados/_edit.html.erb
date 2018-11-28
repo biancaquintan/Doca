@@ -1,9 +1,11 @@
 <%= simple_form_for(@pedido, local: true) do |form| %>
-  <div class="py-3 z-depth-1 div-modal-default green-default mt-3">
-    <h1>Situação do Pedido</h1>
-
+  <div class="div-modal-default alert-info z-depth-1 mt-3 py-3 text-center">
     <% @situacoes.each do |situacao| %>
-      <%= form.radio_button :situacao_id, situacao.id %> <%= situacao.descricao %>
+      <div class="custom-control custom-radio custom-control-inline">
+        <%= form.radio_button :situacao_id, situacao.id %> <%= situacao.descricao %>
+        <!-- <input type="radio" value="<%= situacao.id %>" name="pedido_atestado[situacao_id]" class="custom-control-input" id='<%="pedido_atestado_situacao_id_#{situacao.id}"%>'>
+        <label class="custom-control-label" for="<%="pedido_atestado_situacao_id_#{situacao.id}" %>"><%= situacao.descricao %></label> -->
+      </div>
     <% end %>
 
     <div class="mb-4 col-md-6 offset-md-3" style="display: block" id="observacao" >
@@ -11,7 +13,7 @@
     </div>
   </div>
 
-  <div class="actions text-center py-2">
+  <div class="actions text-center pt-2">
     <%= form.submit 'Atualizar Situação', :class => 'btn btn-primary' %>
   </div>
 <% end %>
