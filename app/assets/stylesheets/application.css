@@ -131,6 +131,13 @@ a.btn.pull-right {
   border-radius: 5px;
 }
 
+.modal-body{
+  background-color: #ffff;
+  border-radius: 5px;
+}
+.modal-content{
+  background-color: #ededed !important;
+}
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 .btn-index {

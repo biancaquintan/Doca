@@ -1,16 +1,9 @@
 <div class="container-fluid py-3 z-depth-1 div-modal-default">
-  <div class="form-row pull-right">
-    <kbd class="green-default"><small>Data do pedido: <%= @pedido.created_at.strftime('%d/%m/%Y') %></small></kbd>
-  </div>
-
+  <p class="text-center">Solicitado <%= I18n.l(@pedido.created_at, format: :long) %></p>
+  <hr>
   <div class="form-row mb-1">
     <strong class="text-left pr-2">Solicitante: </strong>
     <%= @pedido.nome %>
-  </div>
-
-  <div class="form-row mb-1">
-    <strong class="text-left pr-2">Matrícula: </strong>
-    <%= @pedido.matricula %>
   </div>
 
   <div class="form-row mb-1">
@@ -19,13 +12,13 @@
   </div>
 
   <div class="form-row mb-1">
-    <strong class="text-left pr-2">Curso:</strong>
-    <%= @pedido.curso.descricao %>
+    <strong class="text-left pr-2">Matrícula: </strong>
+    <%= @pedido.matricula %>
   </div>
 
   <div class="form-row mb-1">
-    <strong class="text-left pr-2">Período:</strong>
-    <%= @pedido.periodo %>
+    <strong class="text-left pr-2">Curso:</strong>
+    <%= @pedido.curso.descricao %> / <%= @pedido.periodo %>º período
   </div>
 
   <div class="form-row mb-1">
@@ -34,24 +27,14 @@
   </div>
 
   <div class="form-row mb-1">
-    <strong class="text-left pr-2">Ano Letivo:</strong>
-    <%= @pedido.anoLetivo %>
-  </div>  
-
-  <div class="form-row mb-1">
     <strong class="text-left pr-2">Contatos:</strong>
-    <%= @pedido.telefone %> | <%= @pedido.celular %>
+    <%= @pedido.email %> | <%= @pedido.telefone %> | <%= @pedido.celular %>
   </div>
-
-  <div class="form-row mb-1">
-    <strong class="text-left pr-2">Email:</strong>
-    <%= @pedido.email %>
-  </div>  
 
   <div class="form-row mb-1">
     <strong class="text-left pr-2">Finalidade do pedido:</strong>
     <%= @pedido.finalidadePedido %>
-  </div>  
+  </div>
 </div>
 
 <%= render partial: 'pedido_atestados/edit', pedido_atestado: @pedido %>
