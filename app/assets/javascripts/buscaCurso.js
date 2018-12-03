@@ -14,11 +14,6 @@ $(document).on('ready page:load', function () {
         select_periodo.append($('<option>').attr('value', "").text("Selecione o período/módulo"));
         select_periodo.attr('disabled', true);
 
-        if (result.quantidadePeriodo > 0)
-          idPeriodo.style.display = 'block';
-        else
-          idPeriodo.style.display = 'none';
-
         for (var i = 1; i <= result.quantidadePeriodo; i++) {
           select_periodo.append($('<option>').attr('value', i).text(i));
           select_periodo.attr('disabled', false);
