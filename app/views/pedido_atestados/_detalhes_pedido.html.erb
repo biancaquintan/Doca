@@ -18,17 +18,12 @@
 
   <div class="form-row mb-1">
     <strong class="text-left pr-2">Curso:</strong>
-    <%= @pedido.curso.descricao %> / <%= @pedido.periodo %>º período
-  </div>
-
-  <div class="form-row mb-1">
-    <strong class="text-left pr-2">Turno:</strong>
-    <%= @pedido.turno %>
+    <%= @pedido.curso.descricao %> / <%= @pedido.periodo + "º #{@pedido.curso.nivelEscolaridade === "Superior" ? "período" : "módulo"}"%> - <%= @pedido.turno %>
   </div>
 
   <div class="form-row mb-1">
     <strong class="text-left pr-2">Contatos:</strong>
-    <%= @pedido.email %> | <%= @pedido.telefone %> | <%= @pedido.celular %>
+    <%= @pedido.email %> <%= !@pedido.telefone.blank? ? "| "+ @pedido.telefone : ""  %> <%= !@pedido.celular.blank? ? "| "+ @pedido.celular : ""  %>
   </div>
 
   <div class="form-row mb-1">

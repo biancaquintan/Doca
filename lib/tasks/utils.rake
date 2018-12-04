@@ -2,14 +2,14 @@ namespace :utils do
   desc "Cadastro básico de Situações e Cursos"
   task seed: :environment do
     puts "Cadastrando as situações..."
-      Situacao.create!([{descricao: "Em Análise", observacao: ""},
-                        {descricao: "Aprovado", observacao: ""},
+      Situacao.create!([{descricao: "Em análise", observacao: ""},
+                        {descricao: "Nada Consta aprovado", observacao: ""},
                         {descricao: "Negado", observacao: ""},
                         {descricao: "Disponível para retirada", observacao: ""},
                         {descricao: "Entregue", observacao: ""},
       ])
     puts "Cadastrando Cursos..."
-      Curso.create([{descricao: "Sistemas de Informação", nivelEscolaridade: "Superior", quantidadePeriodo: 8},
+      Curso.create([{descricao: "Bacharelado em Sistemas de Informação", nivelEscolaridade: "Superior", quantidadePeriodo: 8},
                     {descricao: "Engenharia da Computação", nivelEscolaridade: "Superior", quantidadePeriodo: 10},
                     {descricao: "Engenharia de Controle e Automação", nivelEscolaridade: "Superior", quantidadePeriodo: 10},
                     {descricao: "Engenharia Elétrica", nivelEscolaridade: "Superior", quantidadePeriodo: 10},
