@@ -13,10 +13,63 @@
  *= require_tree .
  *= require_self
  *= require bootstrap.min
- *= require sticky-footer
  *= require mdb
+ *= require sticky-footer
  *= require font-awesome
  */
+
+@media (max-device-width: 767px) and (orientation: portrait){
+  div.alert {
+    margin-top: 80px;
+  }
+  footer.card-footer {
+    font-size: 2rem;
+  }
+  .navbar span {
+    font-size: 2rem;
+    padding: 10px !important;
+  }
+  .btn-group-vertical a.btn-index {
+    font-size: 3rem;
+    padding: 35px;
+  }
+  .btn-group-vertical a.btn-index i {
+    font-size: 4rem;
+    padding: 15px;
+  }
+  #main {
+    padding-top: 30px !important;
+  }
+  #main h2 {
+   font-size: 3.5rem;
+  }
+  #main div {
+    font-size: 2rem;
+  }
+  .menu-mobile {
+    flex-direction: column;
+    display: grid !important;
+  }
+  .menu-mobile a.btn-menu, .menu-mobile a.btn-menu2 {
+    border-radius: 10px !important;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  #main h7, #main .icone {
+    font-size: 2.5rem;
+  }
+  .btn.btn-sm.green-default, .btn.btn-sm .fa {
+    display: none;
+  }
+  .btn.btn-sm {
+    font-size: 1.5rem !important;
+    background-color: #66AB8C !important;
+  }
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: portrait){
+
+}
 
 body {
   padding-top: 30px;
@@ -27,6 +80,10 @@ body {
 }
 #main {
   padding: 0 50px;
+}
+#main h2 {
+  font-weight: bold;
+  margin-top: 100px;
 }
 h1 {
   font-size: 1.5rem !important;
