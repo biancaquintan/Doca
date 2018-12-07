@@ -37,10 +37,11 @@
     font-size: 4rem;
     padding: 15px;
   }
-  #main {
+  #main, #main h4 {
     padding-top: 30px !important;
   }
-  #main h2 {
+  #main h2,
+  #main h4 {
    font-size: 3.5rem;
   }
   #main div {
@@ -65,9 +66,23 @@
     font-size: 1.5rem !important;
     background-color: #66AB8C !important;
   }
+  #div-busca{
+    display: grid;
+    grid-row-gap: 10px;
+    overflow: visible;
+    max-width: fit-content !important;
+  }
+  .form-default {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  #btn-search i {
+    font-size: 4rem;
+    padding: 10px;
+  }
 }
 
-@media (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: portrait){
+@media (min-device-width: 768px) and (max-device-width: 991px) and (orientation: portrait){
 
 }
 
@@ -80,10 +95,11 @@ body {
 }
 #main {
   padding: 0 50px;
+  padding-bottom: inherit;
 }
 #main h2 {
   font-weight: bold;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 h1 {
   font-size: 1.5rem !important;
