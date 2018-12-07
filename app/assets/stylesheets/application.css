@@ -80,10 +80,54 @@
     font-size: 4rem;
     padding: 10px;
   }
+  .form-default div {
+    display: grid;
+    grid-row-gap: 10px;
+  }
+  .form-default div .form-control {
+    font-size: larger;
+    padding: 50px;
+  }
+  .custom-select {
+    height: calc(5rem + 2px) !important;
+    font-size: larger;
+    padding-left: 50px !important;
+  }
+  .form-default div.mb-4{
+    margin-bottom: 10px !important;
+  }
+  .form-default .mb-4.col-md-6.offset-md-3 {
+    max-width: 100% !important;
+    padding: 0;
+    margin: 0;
+  }
+  #div-turno {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  #div-turno label {
+    padding-left: 50px;
+  }
+  div.actions input {
+    font-size: 2.5rem;
+    padding: 30px;
+  }
+  .custom-control-label::before {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
 }
 
 @media (min-device-width: 768px) and (max-device-width: 991px) and (orientation: portrait){
-
+  .menu-mobile {
+    flex-direction: column;
+    display: grid !important;
+  }
+  .menu-mobile a.btn-menu, .menu-mobile a.btn-menu2 {
+    border-radius: 10px !important;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
 }
 
 body {
