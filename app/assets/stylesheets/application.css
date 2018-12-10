@@ -21,6 +21,7 @@
 @media (max-device-width: 767px) and (orientation: portrait){
   div.alert {
     margin-top: 80px;
+    font-size: 2rem;
   }
   footer.card-footer {
     font-size: 2rem;
@@ -115,6 +116,27 @@
   .custom-control-label::before {
     width: 3rem !important;
     height: 3rem !important;
+  }
+  .modal-dialog {
+    max-width: 90% !important;
+    margin: 20rem auto !important;
+  }
+  #status-bar,
+  #msg-andamento,
+  #detalhes_pedido div p {
+    font-size: 1.7rem !important;
+  }
+  div.div-modal-default.alert-info {
+    display: grid;
+  }
+  div.div-modal-default.alert-info div {
+    left: 10px;
+  }
+  .alert-info label.custom-control-label {
+    padding-left: 2rem;
+  }
+  .close span {
+    font-size: 5rem;
   }
 }
 
@@ -280,4 +302,7 @@ a.btn.pull-right {
 }
 .btn-group-vertical .fa{
   color: #66AB8C;
+}
+div.progress {
+  margin: 2rem;
 }
