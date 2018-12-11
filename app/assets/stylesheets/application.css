@@ -42,6 +42,7 @@
     padding-top: 30px !important;
   }
   #main h2,
+  #main h3,
   #main h4 {
    font-size: 3.5rem;
   }
@@ -52,7 +53,8 @@
     flex-direction: column;
     display: grid !important;
   }
-  .menu-mobile a.btn-menu, .menu-mobile a.btn-menu2 {
+  .menu-mobile a.btn-menu,
+  .menu-mobile a.btn-menu2 {
     border-radius: 10px !important;
     margin-bottom: 10px;
     font-size: 1.5rem;
@@ -88,6 +90,19 @@
   .form-default div .form-control {
     font-size: larger;
     padding: 50px;
+  }
+  #lembrar-me {
+    display: block;
+  }
+  #lembrar-me .form-check-input {
+    position: relative;
+  }
+  #div-login .div-btn {
+    display: block;
+    font-size: inherit;
+  }
+  #div-login .div-btn .btn {
+    font-size: inherit;
   }
   .custom-select {
     height: calc(5rem + 2px) !important;
@@ -137,6 +152,14 @@
   }
   .close span {
     font-size: 5rem;
+  }
+  button.close {
+    font-size: 3rem;
+  }
+  #div-login {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: fit-content;
   }
 }
 
