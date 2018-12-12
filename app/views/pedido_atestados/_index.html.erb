@@ -21,7 +21,7 @@
 
 <%= render partial: 'pedido_atestados/form_busca', :locals => {:path => "pedidos_biblioteca_path"} %>
 
-<div class="list-group">
+<div id="lista-pedidos" class="list-group">
   <% @pedido_atestados.each do |pedido_atestado| %>
     <section class="list-group-item flex-column align-items-start mb-1 p-2">
       <div class="d-flex w-100 mb-2 justify-content-between badge badge-light p-1">
