@@ -38,7 +38,8 @@
     font-size: 4rem;
     padding: 15px;
   }
-  #main, #main h4 {
+  #main,
+  #main h4 {
     padding-top: 30px !important;
   }
   #main h2,
@@ -59,17 +60,19 @@
     margin-bottom: 10px;
     font-size: 1.5rem;
   }
-  #main h7, #main .icone {
+  #main h7,
+  #main .icone {
     font-size: 2.5rem;
   }
-  .btn.btn-sm.green-default, .btn.btn-sm .fa {
+  .btn.btn-sm.green-default,
+  .btn.btn-sm .fa {
     display: none;
   }
   .btn.btn-sm {
     font-size: 1.5rem !important;
     background-color: #66AB8C !important;
   }
-  #div-busca{
+  #div-busca {
     display: grid;
     grid-row-gap: 10px;
     overflow: visible;
@@ -160,6 +163,34 @@
     margin-right: 0;
     margin-left: 0;
     max-width: fit-content;
+  }
+  #lista-pedidos p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  #lista-pedidos span.badge, #lista-pedidos small {
+    font-size: 75% !important;
+  }
+  #lista-pedidos .btn .fa {
+    font-size: 4rem;
+    padding-left: 8px;
+  }
+  #btn-filtros button,
+  #btn-filtros button i {
+    display: inherit;
+    font-size: 3.5rem;
+  }
+  #filtros .col-md-3 {
+    flex: auto;
+    max-width: inherit;
+  }
+  #btn-filtros {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1rem 0;
+  }
+  #filtros div.col-md-3 {
+    padding-top: 0.6rem;
   }
 }
 
