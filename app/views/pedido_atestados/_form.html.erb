@@ -23,15 +23,15 @@
       </div>
     </div>
     <div class="form-row mb-4">
-      <div class="col-md-4">
+      <div class="col">
         <%= form.input :curso_id, :as => :select, :collection => Curso.all.collect { |curso| [curso.descricao, curso.id] }, :label => false, :prompt => 'Selecione um curso', input_html: {:class => "browser-default custom-select", :id => "curso_id"} %>
       </div>
-      <div class="col" id="idPeriodo" style="display: none">
-        <%= form.input :periodo, :as => :select, :collection => Curso.all.collect { |curso| [curso.quantidadePeriodo, curso.quantidadePeriodo] }, :label => false, input_html: {:class => "browser-default custom-select", :id => "periodo"} %>
+      <div class="col" id="idPeriodo">
+        <%= form.input :periodo, :as => :select, :collection => Curso.all.collect { |curso| [curso.quantidadePeriodo, curso.quantidadePeriodo] }, :label => false, :prompt => 'Selecione o período/módulo', input_html: {:class => "browser-default custom-select", :id => "periodo", :disabled => "true"} %>
       </div>
 
-      <div class="col">
-        <%= form.label :turno, "Turno", :class => 'px-4 pt-2' %>
+      <div class="col" id="div-turno">
+        <%= form.label :turno, "Turno", :class => 'px-2 pt-2' %>
         <div class="custom-control custom-radio custom-control-inline">
           <input type="radio" value="Diurno" name="pedido_atestado[turno]" class="custom-control-input" id="pedido_atestado_turno_diurno">
           <label class="custom-control-label" for="pedido_atestado_turno_diurno">Diurno</label>

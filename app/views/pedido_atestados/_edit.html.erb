@@ -2,9 +2,9 @@
   <div class="div-modal-default alert-info z-depth-1 mt-3 py-3 text-center">
     <% @situacoes.each do |situacao| %>
       <div class="custom-control custom-radio custom-control-inline">
-        <%= form.radio_button :situacao_id, situacao.id %> <%= situacao.descricao %>
-        <!-- <input type="radio" value="<%= situacao.id %>" name="pedido_atestado[situacao_id]" class="custom-control-input" id='<%="pedido_atestado_situacao_id_#{situacao.id}"%>'>
-        <label class="custom-control-label" for="<%="pedido_atestado_situacao_id_#{situacao.id}" %>"><%= situacao.descricao %></label> -->
+        <!-- <%= form.radio_button :situacao_id, situacao.id %> <%= situacao.descricao %> -->
+        <input type="radio" value="<%= situacao.id %>" name="pedido_atestado[situacao_id]" class="custom-control-input" id='<%="pedido_atestado_situacao_id_#{situacao.id}"%>'>
+        <label class="custom-control-label" for="<%="pedido_atestado_situacao_id_#{situacao.id}" %>"><%= situacao.descricao %></label>
       </div>
     <% end %>
 

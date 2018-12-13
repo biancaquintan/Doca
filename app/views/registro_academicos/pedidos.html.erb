@@ -1,14 +1,16 @@
-<i class="fa fa-id-card-o icone" aria-hidden="true"></i><strong><h7> Módulo Registro Acadêmico</h7></strong>
-<%= link_to destroy_usuario_session_path, method: :delete, :class => 'col-sm-1 pull-right btn dark-default btn-sm text-white' do %>
-  Sair
-  <i class="fa fa-sign-out pl-1" aria-hidden="true"></i>
-<% end %>
-<%= link_to registroacademico_path, :class => 'col-sm-1 pull-right btn green-default btn-sm text-white' do %>
-  <i class="fa fa-arrow-left pr-1" aria-hidden="true"></i>
-  Voltar
-<% end %>
-<hr/>
+<div>
+  <i class="fa fa-id-card-o icone" aria-hidden="true"></i><strong><h7> Módulo Registro Acadêmico</h7></strong>
+  <%= link_to destroy_usuario_session_path, method: :delete, :class => 'col-sm-1 pull-right btn dark-default btn-sm text-white' do %>
+    Sair
+    <i class="fa fa-sign-out pl-1" aria-hidden="true"></i>
+  <% end %>
+  <%= link_to registroacademico_path, :class => 'col-sm-1 pull-right btn green-default btn-sm text-white' do %>
+    <i class="fa fa-arrow-left pr-1" aria-hidden="true"></i>
+    Voltar
+  <% end %>
+  <hr/>
 
-<div class="container-fluid">
-  <%= render partial: 'pedido_atestados/index' %>
+  <div class="container-fluid">
+    <%= render partial: 'pedido_atestados/index' %>
+  </div>
 </div>

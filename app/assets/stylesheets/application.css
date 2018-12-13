@@ -13,10 +13,241 @@
  *= require_tree .
  *= require_self
  *= require bootstrap.min
- *= require sticky-footer
  *= require mdb
+ *= require sticky-footer
  *= require font-awesome
  */
+
+@media (max-device-width: 991px) and (orientation: portrait) {
+  footer.card-footer {
+    font-size: 2rem;
+  }
+  .btn-group-vertical a.btn-index {
+    font-size: 3rem;
+    padding: 35px;
+  }
+  #main h2,
+  #main h3,
+  #main h4 {
+   font-size: 3.5rem;
+  }
+  .menu-mobile {
+    flex-direction: column;
+    display: grid !important;
+  }
+  .menu-mobile a.btn-menu,
+  .menu-mobile a.btn-menu2 {
+    border-radius: 10px !important;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  #main h7,
+  #main .icone {
+    font-size: 2.5rem;
+  }
+  .btn.btn-sm.green-default,
+  .btn.btn-sm .fa {
+    display: none;
+  }
+  .btn.btn-sm {
+    font-size: 1.5rem !important;
+    background-color: #66AB8C !important;
+  }
+  .form-default {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  #btn-search i {
+    font-size: 4rem;
+    padding: 10px;
+  }
+  div.actions input {
+    font-size: 2.5rem;
+    padding: 30px;
+  }
+  #div-login {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: fit-content;
+    margin-left: 10% !important;
+  }
+  #div-login .div-btn .btn {
+    font-size: inherit;
+  }
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait){
+  .navbar span {
+    font-size: 2.2rem;
+    padding: 10px !important;
+  }
+  div.alert {
+    margin-top: 80px;
+    font-size: 2rem;
+  }
+  #main,
+  #main h4 {
+    padding-top: 30px !important;
+  }
+  #main div {
+    font-size: 2rem;
+  }
+  .btn-group-vertical a.btn-index i {
+    font-size: 4rem;
+    padding: 15px;
+  }
+  #div-busca {
+    display: grid;
+    grid-row-gap: 10px;
+    overflow: visible;
+    max-width: fit-content !important;
+  }
+  .form-default div {
+    display: grid;
+    grid-row-gap: 10px;
+  }
+  .form-default div .form-control {
+    font-size: 2.2rem;
+    padding: 50px;
+  }
+  .custom-select {
+    height: calc(5rem + 2px) !important;
+    font-size: 2.2rem;
+    padding-left: 50px !important;
+  }
+  .form-default div.mb-4{
+    margin-bottom: 10px !important;
+  }
+  .form-default .mb-4.col-md-6.offset-md-3 {
+    max-width: 100% !important;
+    padding: 0;
+    margin: 0;
+  }
+  #div-turno {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  #div-turno label {
+    padding-left: 50px;
+  }
+  .custom-control-label::before {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  .modal-dialog {
+    max-width: 90% !important;
+    margin: 20rem auto !important;
+  }
+  #status-bar,
+  #msg-andamento,
+  #detalhes_pedido div p {
+    font-size: 1.7rem !important;
+  }
+  div.div-modal-default.alert-info {
+    display: grid;
+  }
+  div.div-modal-default.alert-info div {
+    left: 10px;
+  }
+  .close span {
+    font-size: 5rem;
+  }
+  button.close {
+    font-size: 3rem;
+  }
+  .alert-info label.custom-control-label {
+    padding-left: 2rem;
+  }
+  #lembrar-me {
+    display: block;
+  }
+  #lembrar-me .form-check-input {
+    position: relative;
+  }
+  #div-login .div-btn {
+    display: block;
+    font-size: inherit;
+  }
+  #lista-pedidos p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  #lista-pedidos span.badge,
+  #lista-pedidos small {
+    font-size: 80% !important;
+  }
+  #lista-pedidos .btn .fa {
+    font-size: 4rem;
+    padding-left: 8px;
+  }
+  #btn-filtros button,
+  #btn-filtros button i {
+    display: inherit;
+    font-size: 3.5rem;
+  }
+  #filtros .col-md-3 {
+    flex: auto;
+    max-width: inherit;
+  }
+  #btn-filtros {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1rem 0;
+  }
+  #filtros div.col-md-3 {
+    padding-top: 0.6rem;
+  }
+  #btn-filtros .btn-sm{
+    min-width: 100% !important;
+    font-size: 1.5rem !important;
+  }
+  #btn-filtros .btn-sm i {
+    font-size: 2rem !important;
+  }
+}
+
+@media (min-device-width: 992px) and (max-device-width: 1200px) and (orientation: portrait){
+  footer.card-footer {
+    font-size: 1.8rem;
+  }
+  #main h2,
+  #main h3,
+  #main h4 {
+    font-size: 3rem;
+  }
+  .btn-group-vertical a.btn-index {
+    font-size: 2rem;
+  }
+  .menu-mobile a.btn {
+    font-size: 1.3rem;
+  }
+  #main h7,
+  #main .icone {
+    font-size: 2rem;
+  }
+  .btn.btn-sm {
+    max-width: 11%;
+  }
+  .btn.btn-sm,
+  .btn.btn-sm .fa {
+    font-size: 1rem !important;
+  }
+  #div-busca .form-default,
+  #btn-search i {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  div.actions input {
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+  #div-login {
+    max-width: fit-content;
+  }
+  #div-login .div-btn .btn {
+    font-size: 2.5rem;
+  }
+}
 
 body {
   padding-top: 30px;
@@ -27,6 +258,11 @@ body {
 }
 #main {
   padding: 0 50px;
+  padding-bottom: inherit;
+}
+#main h2 {
+  font-weight: bold;
+  margin-top: 70px;
 }
 h1 {
   font-size: 1.5rem !important;
@@ -163,4 +399,7 @@ a.btn.pull-right {
 }
 .btn-group-vertical .fa{
   color: #66AB8C;
+}
+div.progress {
+  margin: 2rem;
 }

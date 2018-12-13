@@ -8,7 +8,7 @@
   </section>
 </div>
 
-<div class="progress my-4 mx-5" style="height: 30px; font-weight: bold">
+<div class="progress" style="height: 30px; font-weight: bold">
   <div id="status-bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><%= @pedido_atestado.situacao.descricao %></div>
 </div>
 
@@ -26,7 +26,7 @@
     case 3:
       newprogress = 100;
       $('#status-bar').css('background-color', 'red');
-      mensagem = "Nada Consta recusado devido a pendências no setor bibliotecário. Verifique em http://terminal.biblioteca.iff.edu.br/"
+      mensagem = "Nada Consta recusado devido a pendências no setor bibliotecário.<br>Acesse <a href='http://gru.centro.iff.edu.br/'>http://gru.centro.iff.edu.br/</a>.";
       break;
 
     case 4:
@@ -36,13 +36,14 @@
 
     case 5:
       newprogress = 100;
-      mensagem = "Documento retirado."
+      mensagem = "Documento retirado em <%= @pedido_atestado.updated_at.strftime("%d/%m/%Y") %>."
       $('#status-bar').css('background-color', 'green');
       break;
 
     default:
       newprogress = 15;
       mensagem = "Aguardando liberação do Nada Consta pelo setor bibliotecário."
+      break;
   }
 
   document.getElementById('msg-andamento').innerHTML = mensagem;
