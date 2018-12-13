@@ -1,1 +1,1 @@
-document.getElementById("observacao").style="display: block";
+//document.getElementById("observacao").style="display: block";
