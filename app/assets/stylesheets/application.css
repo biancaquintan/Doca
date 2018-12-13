@@ -18,37 +18,18 @@
  *= require font-awesome
  */
 
-@media (max-device-width: 767px) and (orientation: portrait){
-  div.alert {
-    margin-top: 80px;
-    font-size: 2rem;
-  }
+@media (max-device-width: 991px) and (orientation: portrait) {
   footer.card-footer {
     font-size: 2rem;
-  }
-  .navbar span {
-    font-size: 2rem;
-    padding: 10px !important;
   }
   .btn-group-vertical a.btn-index {
     font-size: 3rem;
     padding: 35px;
   }
-  .btn-group-vertical a.btn-index i {
-    font-size: 4rem;
-    padding: 15px;
-  }
-  #main,
-  #main h4 {
-    padding-top: 30px !important;
-  }
   #main h2,
   #main h3,
   #main h4 {
    font-size: 3.5rem;
-  }
-  #main div {
-    font-size: 2rem;
   }
   .menu-mobile {
     flex-direction: column;
@@ -72,12 +53,6 @@
     font-size: 1.5rem !important;
     background-color: #66AB8C !important;
   }
-  #div-busca {
-    display: grid;
-    grid-row-gap: 10px;
-    overflow: visible;
-    max-width: fit-content !important;
-  }
   .form-default {
     font-size: 3.5rem;
     text-align: center;
@@ -86,30 +61,58 @@
     font-size: 4rem;
     padding: 10px;
   }
+  div.actions input {
+    font-size: 2.5rem;
+    padding: 30px;
+  }
+  #div-login {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: fit-content;
+    margin-left: 10% !important;
+  }
+  #div-login .div-btn .btn {
+    font-size: inherit;
+  }
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait){
+  .navbar span {
+    font-size: 2.2rem;
+    padding: 10px !important;
+  }
+  div.alert {
+    margin-top: 80px;
+    font-size: 2rem;
+  }
+  #main,
+  #main h4 {
+    padding-top: 30px !important;
+  }
+  #main div {
+    font-size: 2rem;
+  }
+  .btn-group-vertical a.btn-index i {
+    font-size: 4rem;
+    padding: 15px;
+  }
+  #div-busca {
+    display: grid;
+    grid-row-gap: 10px;
+    overflow: visible;
+    max-width: fit-content !important;
+  }
   .form-default div {
     display: grid;
     grid-row-gap: 10px;
   }
   .form-default div .form-control {
-    font-size: larger;
+    font-size: 2.2rem;
     padding: 50px;
-  }
-  #lembrar-me {
-    display: block;
-  }
-  #lembrar-me .form-check-input {
-    position: relative;
-  }
-  #div-login .div-btn {
-    display: block;
-    font-size: inherit;
-  }
-  #div-login .div-btn .btn {
-    font-size: inherit;
   }
   .custom-select {
     height: calc(5rem + 2px) !important;
-    font-size: larger;
+    font-size: 2.2rem;
     padding-left: 50px !important;
   }
   .form-default div.mb-4{
@@ -126,10 +129,6 @@
   }
   #div-turno label {
     padding-left: 50px;
-  }
-  div.actions input {
-    font-size: 2.5rem;
-    padding: 30px;
   }
   .custom-control-label::before {
     width: 3rem !important;
@@ -150,26 +149,32 @@
   div.div-modal-default.alert-info div {
     left: 10px;
   }
-  .alert-info label.custom-control-label {
-    padding-left: 2rem;
-  }
   .close span {
     font-size: 5rem;
   }
   button.close {
     font-size: 3rem;
   }
-  #div-login {
-    margin-right: 0;
-    margin-left: 0;
-    max-width: fit-content;
+  .alert-info label.custom-control-label {
+    padding-left: 2rem;
+  }
+  #lembrar-me {
+    display: block;
+  }
+  #lembrar-me .form-check-input {
+    position: relative;
+  }
+  #div-login .div-btn {
+    display: block;
+    font-size: inherit;
   }
   #lista-pedidos p {
     font-size: 2rem;
     line-height: 2.5rem;
   }
-  #lista-pedidos span.badge, #lista-pedidos small {
-    font-size: 75% !important;
+  #lista-pedidos span.badge,
+  #lista-pedidos small {
+    font-size: 80% !important;
   }
   #lista-pedidos .btn .fa {
     font-size: 4rem;
@@ -192,17 +197,55 @@
   #filtros div.col-md-3 {
     padding-top: 0.6rem;
   }
+  #btn-filtros .btn-sm{
+    min-width: 100% !important;
+    font-size: 1.5rem !important;
+  }
+  #btn-filtros .btn-sm i {
+    font-size: 2rem !important;
+  }
 }
 
-@media (min-device-width: 768px) and (max-device-width: 991px) and (orientation: portrait){
-  .menu-mobile {
-    flex-direction: column;
-    display: grid !important;
+@media (min-device-width: 992px) and (max-device-width: 1200px) and (orientation: portrait){
+  footer.card-footer {
+    font-size: 1.8rem;
   }
-  .menu-mobile a.btn-menu, .menu-mobile a.btn-menu2 {
-    border-radius: 10px !important;
-    margin-bottom: 10px;
+  #main h2,
+  #main h3,
+  #main h4 {
+    font-size: 3rem;
+  }
+  .btn-group-vertical a.btn-index {
+    font-size: 2rem;
+  }
+  .menu-mobile a.btn {
+    font-size: 1.3rem;
+  }
+  #main h7,
+  #main .icone {
+    font-size: 2rem;
+  }
+  .btn.btn-sm {
+    max-width: 11%;
+  }
+  .btn.btn-sm,
+  .btn.btn-sm .fa {
+    font-size: 1rem !important;
+  }
+  #div-busca .form-default,
+  #btn-search i {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  div.actions input {
     font-size: 1.5rem;
+    padding: 20px;
+  }
+  #div-login {
+    max-width: fit-content;
+  }
+  #div-login .div-btn .btn {
+    font-size: 2.5rem;
   }
 }
 
