@@ -51,7 +51,6 @@
   }
   .btn.btn-sm {
     font-size: 1.5rem !important;
-    background-color: #66AB8C !important;
   }
   .form-default {
     font-size: 3.5rem;
@@ -77,19 +76,17 @@
 }
 
 @media (max-device-width: 1200px) and (orientation: portrait){
-  .navbar span {
-    font-size: 2.2rem;
-    padding: 10px !important;
+  a.navbar-brand {
+    margin: auto;
   }
+  .navbar-brand img {
+    height: 5rem;
+  }
+  header {
+    margin-bottom: 100px;
+  }
+  #main div,
   div.alert {
-    margin-top: 80px;
-    font-size: 2rem;
-  }
-  #main,
-  #main h4 {
-    padding-top: 30px !important;
-  }
-  #main div {
     font-size: 2rem;
   }
   .btn-group-vertical a.btn-index i {
@@ -250,7 +247,7 @@
 }
 
 body {
-  padding-top: 30px;
+  padding-top: 35px;
   width: 100%;
   background-color: #f4f4f4 !important;
   color: #333 !important;
@@ -262,21 +259,14 @@ body {
 }
 #main h2 {
   font-weight: bold;
-  margin-top: 70px;
+  padding-top: 20px;
 }
 h1 {
   font-size: 1.5rem !important;
   font-weight: bold !important;
 }
-.nav-color{
+.nav-color {
   background-color: #E9E7DA;
-}
-#navbar span {
-  font-weight: 900;
-  color: #333;
-}
-#navbar .navbar-brand:hover {
-  background-color: transparent;
 }
 .btn-group {
   top: 30px;
@@ -307,11 +297,14 @@ h1 {
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
 }
-.green-default{
+.green-default {
   background-color: #66AB8C !important;
 }
-.dark-default{
+.dark-default {
   background-color: #263238 !important;
+}
+.blue-default {
+  background-color: rgb(81, 103, 210) !important;
 }
 #div-busca {
   max-width: 400px;
@@ -367,12 +360,15 @@ a.btn.pull-right {
   border-radius: 5px;
 }
 
-.modal-body{
+.modal-body {
   background-color: #ffff;
   border-radius: 5px;
 }
-.modal-content{
+.modal-content {
   background-color: #ededed !important;
+}
+div.progress {
+  margin: 2rem;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
@@ -399,7 +395,4 @@ a.btn.pull-right {
 }
 .btn-group-vertical .fa{
   color: #66AB8C;
-}
-div.progress {
-  margin: 2rem;
 }
