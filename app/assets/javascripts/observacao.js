@@ -1,1 +1,2 @@
-//document.getElementById("observacao").style="display: block";
+//$(document).getElementById("obs").style.diplay="none";
+//document.getElementById("obs").setAttribute("style", "none");

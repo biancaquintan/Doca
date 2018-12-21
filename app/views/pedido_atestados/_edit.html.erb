@@ -3,12 +3,16 @@
     <% @situacoes.each do |situacao| %>
       <div class="custom-control custom-radio custom-control-inline">
         <!-- <%= form.radio_button :situacao_id, situacao.id %> <%= situacao.descricao %> -->
-        <input type="radio" value="<%= situacao.id %>" name="pedido_atestado[situacao_id]" class="custom-control-input" id='<%="pedido_atestado_situacao_id_#{situacao.id}"%>'>
+        <% if @pedido.situacao_id == situacao.id %>
+          <input type="radio" checked value="<%=situacao.id%>" name="pedido_atestado[situacao_id]" class="custom-control-input radioSituacao" id='<%="pedido_atestado_situacao_id_#{situacao.id}"%>'>
+        <% else %>
+          <input type="radio" value="<%=situacao.id%>" name="pedido_atestado[situacao_id]" class="custom-control-input radioSituacao" id='<%="pedido_atestado_situacao_id_#{situacao.id}"%>'>
+        <% end %>
         <label class="custom-control-label" for="<%="pedido_atestado_situacao_id_#{situacao.id}" %>"><%= situacao.descricao %></label>
       </div>
     <% end %>
 
-    <div class="mb-4 col-md-6 offset-md-3" style="display: none" id="observacao" >
+    <div class="mb-4 col-md-6 offset-md-3" style="display: none" id="obs" >
       <%= form.text_area :observacao, placeholder:'Informe o motivo da negação...', :class => "form-control", :maxlength => '220' %>
     </div>
   </div>
@@ -17,3 +21,25 @@
     <%= form.submit 'Atualizar Situação', :class => 'btn btn-primary' %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  var obs = document.getElementById('obs');
+  var situacao = document.getElementById('pedido_atestado_situacao_id_3');
+
+  if (situacao.checked == true) {
+    obs.style.display="block";
+  } else {
+    obs.style.display="none";    
+  }
+  
+  $('.radioSituacao').change(function(event) {
+    var situacao = $(this);
+    var obs = document.getElementById('obs');
+
+    if (situacao[0].value == 3) {
+      obs.style.display="block";
+    } else {
+      obs.style.display="none";    
+    }
+  });
+</script>
