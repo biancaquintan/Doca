@@ -26,6 +26,6 @@
 
 <div id="div-busca">
   <input id="search" class="form-default" type="text" placeholder="Digite um nº de pasta" aria-label="Search" onkeypress="return SomenteNumero(event)" maxlength="6">
-  <%= link_to "#", :id => 'btn-search', :class => 'btn btn-primary px-3 btn-circle', data: {target: "#modal_andamento", toggle: "modal", url: pedido_atestados_get_situacao_path()} do %>
+  <%= link_to "#", :id => 'btn-search', :class => 'btn blue-default px-3 btn-circle', data: {target: "#modal_andamento", toggle: "modal", url: pedido_atestados_get_situacao_path()} do %>
   <i class="fa fa-search" aria-hidden="true"></i><% end %>
 </div>
