@@ -23,19 +23,20 @@ class ApplicationController < ActionController::Base
 
   # Filtra os pedidos para a tela de acesso da biblioteca ou Registro
   def filter_pedido_atestado(acesso)
-    @turno = params[:turno]
+    @curso = params[:curso]
+    # @curso_busca = Curso.where("id in #{params[:curso_id]}")
     @nivel = params[:nivel]
     @situacao = params[:situacao_id]
     @situacao_busca = Situacao.where("id in #{acesso}")
-
+    
     if @situacao.to_s != ""
       filtro = "situacao_id = #{@situacao}"
     else
       filtro = "situacao_id in #{acesso}"
     end
 
-    if @turno.to_s != ""
-      filtro += " and turno = '" + @turno.to_s + "'"
+    if @curso.to_s != ""
+      filtro += " and curso_id = '" + @curso.to_s + "'"
     end
 
     if @nivel.to_s != ""

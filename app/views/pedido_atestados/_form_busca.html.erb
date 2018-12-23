@@ -1,7 +1,7 @@
 <%= simple_form_for(path, method: "get") do |form| %>
   <div id="filtros" class="form-row bg-gray z-depth-1-half mb-3">
     <div class="col-md-3">
-      <%= form.input :turno, :as => :select, :label => false, :collection => PedidoAtestado.all.collect { |pedido| [pedido.turno, pedido.turno] }.uniq, :prompt => 'Selecione um turno', input_html: {:class => "browser-default custom-select", :name => "turno"} %>
+      <%= form.input :curso, :as => :select, :label => false, :collection => Curso.all.collect { |curso| [curso.descricao, curso.id] }.uniq, :prompt => 'Selecione um curso', input_html: {:class => "browser-default custom-select", :name => "curso"} %>
     </div>
     <div class="col-md-3">
       <%= form.input :nivel, :as => :select, :label => false, :collection => Curso.all.collect { |curso| [curso.nivelEscolaridade, curso.nivelEscolaridade] }.uniq, :prompt => 'Selecione um nível', input_html: {:class => "browser-default custom-select pull-left", :name => "nivel"} %>
