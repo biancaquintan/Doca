@@ -1,5 +1,5 @@
 staging:
-=======
+#=======
 # test:
 #   stage: test
 #   script:
