@@ -247,7 +247,7 @@
 }
 
 body {
-  padding-top: 35px;
+  padding-top: 40px;
   width: 100%;
   background-color: #f4f4f4 !important;
   color: #333 !important;
@@ -290,12 +290,12 @@ h1 {
   background-color: #E9E7DA;
 }
 .input-group.md-form.form-xs.form-2 input.green-default-border  {
-    border: 1px solid #66AB8C;
+  border: 1px solid #66AB8C;
 }
 .input-group.md-form.form-xs.form-2 input {
-    border: 1px solid #bdbdbd;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 .green-default {
   background-color: #66AB8C !important;
@@ -320,46 +320,38 @@ h1 {
 a.btn.pull-right {
   padding: 5px 10px !important;
 }
-
 .btn:hover {
   background-color: #E9E7DA !important;
   color: #333 !important;
   border-color: #333 !important;
 }
-
 .bg-gray {
   background-color: #263238;
   border-radius: 8px;
   padding: 10px;
 }
-
 .btn-search {
   margin: 0 0 0 4px !important;
   padding: 11px 18px !important;
 }
-
 .div-modal-default {
   border-radius: 5px;
   background-color: #ededed;
 }
-
 .link-path:hover, .link-path:visited {
   background-color: transparent;
   text-decoration: none;
   color: #333;
 }
-
 .btn-circle {
   border-radius: 20px !important;
   margin: 0 5px !important;
 }
-
 .form-default {
   border: 2px solid #ededed;
   padding: 10px;
   border-radius: 5px;
 }
-
 .modal-body {
   background-color: #ffff;
   border-radius: 5px;
@@ -369,6 +361,9 @@ a.btn.pull-right {
 }
 div.progress {
   margin: 2rem;
+}
+.custom-radio .custom-control-label::before {
+  background-color: #ffff;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>> INDEX <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
