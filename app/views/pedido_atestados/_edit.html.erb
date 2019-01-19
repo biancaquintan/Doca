@@ -11,8 +11,8 @@
       </div>
     <% end %>
 
-    <div class="mb-4 col-md-6 offset-md-3" style="display: none" id="obs" >
-      <%= form.text_area :observacao, placeholder:'Informe o motivo:', :class => "form-control", :maxlength => '220'%>
+    <div class="mx-3 pt-3" style="display: none" id="obs" >
+      <%= form.text_area :observacao, placeholder:'Justifique a negação...', :class => "form-control", :maxlength => '220' %>
     </div>
   </div>
 
@@ -31,7 +31,7 @@
   } else {
     obs.style.display="none";
   }
-  
+
   $('.radioSituacao').change(function(event) {
     var situacao = $(this);
     var obs = document.getElementById('obs');

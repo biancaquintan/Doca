@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Doca</title>
+    <title>Portal de Solicitação de Documentos Acadêmicos</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,13 +17,13 @@
       <nav  id="navbar" class="navbar fixed-top navbar-dark nav-color">
         <% if !current_usuario %>
           <%= link_to root_path, :class => 'link-path navbar-brand' do %>
-            <%= image_tag("logo-color-default.png",
-              :title => "Central de requisição de documentos acadêmicos", :height => 40) %>
+            <%= image_tag("logo-doca.png",
+              :title => "Portal de Solicitação de Documentos Acadêmicos", :height => 40) %>
           <% end %>
         <% else %>
           <%= link_to (current_usuario.tipo == "registro" ? registroacademico_path : biblioteca_path), :class => 'link-path navbar-brand' do %>
-            <%= image_tag("logo-color-default.png",
-              :title => "Central de requisição de documentos acadêmicos", :height => 40) %>
+            <%= image_tag("logo-doca.png",
+              :title => "Portal de Solicitação de Documentos Acadêmicos", :height => 40) %>
           <% end %>
         <% end %>
       </nav>
