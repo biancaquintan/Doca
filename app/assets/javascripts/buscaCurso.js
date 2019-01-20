@@ -3,7 +3,7 @@ $(document).on('ready page:load', function () {
     var select_periodo = $('select#periodo');
     var CursoId = $(event.currentTarget);
     var idPeriodo = document.getElementById("idPeriodo");
-
+ 
     $.ajax({
       type:"GET",
       url:"/cursos",
