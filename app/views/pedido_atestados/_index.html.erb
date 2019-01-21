@@ -23,17 +23,15 @@
 
 <div id="lista-pedidos" class="list-group">
   <% @pedido_atestados.each do |pedido_atestado| %>
-    <section class="list-group-item flex-column align-items-start mb-1 p-2">
-      <div class="d-flex w-100 mb-2 justify-content-between badge badge-light p-1">
-        <span class="badge blue-default" style="font-size: 14px">Nº Pasta <%= pedido_atestado.pasta %></span>
-        <small style="font-size: 10px; padding: 5px;">Solicitado há <%= (Date.parse(Date.current.to_s) - Date.parse(pedido_atestado.created_at.to_s)).to_i %> dia(s) - <b class="text-uppercase">[ <%= pedido_atestado.situacao.descricao %> ]</b></small>
-      </div>
+    <%= link_to '#', :class => 'btn-detalhes mb-1', data: {target: "#modal_detalhes", toggle: "modal", url: pedido_atestados_get_pedido_path(pedido_atestado.id), id: pedido_atestado.id} do %>
+      <section class="list-group-item flex-column align-items-start p-2">
+        <div class="d-flex w-100 mb-2 justify-content-between badge badge-light p-1">
+          <span class="badge blue-default" style="font-size: 14px">Nº Pasta <%= pedido_atestado.pasta %></span>
+          <small style="font-size: 10px; padding: 5px;">Solicitado há <%= (Date.parse(Date.current.to_s) - Date.parse(pedido_atestado.created_at.to_s)).to_i %> dia(s) - <b class="text-uppercase">[ <%= pedido_atestado.situacao.descricao %> ]</b></small>
+        </div>
 
-      <%= link_to '#', :class => 'btn blue-default text-white float-right px-3 btn-circle btn-detalhes', data: {target: "#modal_detalhes", toggle: "modal", url: pedido_atestados_get_pedido_path(pedido_atestado.id), id: pedido_atestado.id} do %>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      <% end %>
-
-      <p class="pl-2"><%= pedido_atestado.nome %><br><b><%= pedido_atestado.curso.descricao %></b></p>
-    </section>
+        <div class="px-2"><%= pedido_atestado.nome %> (<%= pedido_atestado.curso.descricao %>)</div>
+      </section>
+    <% end %>
   <% end %>
 </div>
