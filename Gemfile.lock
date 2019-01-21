@@ -84,8 +84,6 @@ GEM
     concurrent-ruby (1.0.5)
     concurrent-ruby (1.0.5-java)
     crass (1.0.4)
-    css3-progress-bar-rails (0.5.1)
-      rails (>= 3.1)
     devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -269,7 +267,6 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  css3-progress-bar-rails
   devise
   devise-bootstrap-views (~> 1.0)
   devise-i18n
@@ -295,4 +292,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.16.3
+   1.16.6
