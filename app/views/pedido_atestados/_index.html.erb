@@ -27,9 +27,13 @@
       <section class="list-group-item flex-column align-items-start p-2">
         <div class="d-flex w-100 mb-2 justify-content-between badge badge-light p-1">
           <span class="badge blue-default" style="font-size: 14px">Nº Pasta <%= pedido_atestado.pasta %></span>
-          <small style="font-size: 10px; padding: 5px;">Solicitado há <%= (Date.parse(Date.current.to_s) - Date.parse(pedido_atestado.created_at.to_s)).to_i %> dia(s) - <b class="text-uppercase">[ <%= pedido_atestado.situacao.descricao %> ]</b></small>
+          <% if ((Date.parse(Date.current.to_s) - Date.parse(pedido_atestado.created_at.to_s)).to_i == 0) then %>
+            <small style="font-size: 10px; padding: 5px;">Solicitado Hoje - <b class="text-uppercase">[ <%= pedido_atestado.situacao.descricao %> ]</b></small>
+          <% else %>
+            <small style="font-size: 10px; padding: 5px;">Solicitado há <%= (Date.parse(Date.current.to_s) - Date.parse(pedido_atestado.created_at.to_s)).to_i %> dia(s) - <b class="text-uppercase">[ <%= pedido_atestado.situacao.descricao %> ]</b></small>
+          <% end %>
         </div>
-
+ 
         <div class="px-2"><%= pedido_atestado.nome %> (<%= pedido_atestado.curso.descricao %>)</div>
       </section>
     <% end %>
