@@ -23,9 +23,10 @@
 
 <script type="text/javascript">
   var obs = document.getElementById('obs');
-  var situacao = document.getElementById('pedido_atestado_situacao_id_3');
+  var situacaoNegado = document.getElementById('pedido_atestado_situacao_id_3');
+  var situacaoIndeferido = document.getElementById('pedido_atestado_situacao_id_4');
 
-  if (situacao.checked == true) {
+  if ((situacaoNegado != null && situacaoNegado.checked == true) || (situacaoIndeferido != null && situacaoIndeferido.checked == true)) {
     obs.style.display="block";
   } else {
     obs.style.display="none";
@@ -34,8 +35,8 @@
   $('.radioSituacao').change(function(event) {
     var situacao = $(this);
     var obs = document.getElementById('obs');
-
-    if (situacao[0].value == 3) {
+    
+    if (situacao[0].value == 3 || situacao[0].value == 4) {
       obs.style.display="block";
     } else {
       obs.style.display="none";

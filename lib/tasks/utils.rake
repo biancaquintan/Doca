@@ -5,6 +5,7 @@ namespace :utils do
       Situacao.create!([{descricao: "Em análise", observacao: ""},
                         {descricao: "Nada Consta aprovado", observacao: ""},
                         {descricao: "Negado", observacao: ""},
+                        {descricao: "Indeferido", observacao: ""},
                         {descricao: "Disponível para retirada", observacao: ""},
                         {descricao: "Entregue", observacao: ""},
       ])

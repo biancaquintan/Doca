@@ -23,6 +23,8 @@
 class PedidoAtestadosController < ApplicationController
   before_action :set_pedido_atestado, only: [:show, :edit, :update, :destroy]
 
+  COD_INDEFERIDO = 4
+  COD_NEGADO = 3
   # GET /pedido_atestados
   # GET /pedido_atestados.json
   def index
@@ -70,7 +72,10 @@ class PedidoAtestadosController < ApplicationController
     end
 
     respond_to do |format|
-      if @pedido_atestado.update(pedido_atestado_params)
+      if @pedido_atestado.update(pedido_atestado_params) then
+        if @pedido_atestado.situacao_id != COD_NEGADO and @pedido_atestado.situacao_id != COD_INDEFERIDO then
+          @pedido_atestado.update_column(:observacao, nil)
+        end        
         format.html { redirect_to @pagina_home, notice: 'Pedido atualizado com sucesso!' }
         format.json { render @pagina_home, status: :ok, location: @pedido_atestado }
       else
@@ -95,7 +100,7 @@ class PedidoAtestadosController < ApplicationController
     if [1, 3].include? @pedido.situacao_id then
       @situacoes = Situacao.find(1,2,3)
     else
-      @situacoes = Situacao.find(2,4,5)
+      @situacoes = Situacao.find(2,4,5,6)
     end
   end
 
@@ -110,8 +115,7 @@ class PedidoAtestadosController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def pedido_atestado_params
-      # params.fetch(:pedido_atestado, {})
+    def pedido_atestado_params    
       params.require(:pedido_atestado).permit(:type, :nome, :matricula, :pasta, :periodo, :turno, :telefone, :celular, :email, :finalidadePedido, :curso_id, :situacao_id, :observacao)
     end
 end

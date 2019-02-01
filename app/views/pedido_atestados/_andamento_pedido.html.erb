@@ -4,7 +4,7 @@
     <br>
     <small><strong>Data do pedido:</strong> <%= @pedido_atestado.created_at.strftime("%d/%m/%Y") %></small>
     <hr>
-    <p id="msg-andamento" class="text-center"></p>
+    <p id="msg-andamento" class="text-center"></p>    
   </section>
 </div>
 
@@ -12,12 +12,12 @@
   <div id="status-bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><%= @pedido_atestado.situacao.descricao %></div>
 </div>
 
-
 <script type="text/javascript">
-  var newprogress;
-  let mensagem;
-
   switch (<%= @pedido_atestado.situacao_id %>) {
+    case 1:
+      newprogress = 15;
+      mensagem = "Aguardando liberação do Nada Consta pelo setor bibliotecário."
+      break;
     case 2:
       newprogress = 40;
       mensagem = "Encaminhado ao Registro Acadêmico para digitalização."
@@ -26,24 +26,31 @@
     case 3:
       newprogress = 100;
       $('#status-bar').css('background-color', 'red');
-      mensagem = "Nada Consta recusado devido a pendências no setor bibliotecário.<br>Acesse <a href='http://gru.centro.iff.edu.br/'>http://gru.centro.iff.edu.br/</a>.";
+      mensagem = "Nada Consta recusado devido a pendências no setor bibliotecário.<br> Obervação: <%= @pedido_atestado.observacao %> <br> Acesse <a href='http://gru.centro.iff.edu.br/'>http://gru.centro.iff.edu.br/</a>.";
+      break;
+    
+    case 4:
+      newprogress = 100;
+      $('#status-bar').css('background-color', 'red');
+      mensagem = "Pedido Indeferido devido a pendências no setor registro acadêmico.<br> Obervação: <%= @pedido_atestado.observacao %>.";
       break;
 
-    case 4:
+    case 5:
       newprogress = 80;
       mensagem = "O documento encontra-se disponível no Registro Acadêmico."
       break;
 
-    case 5:
+    case 6:
       newprogress = 100;
       mensagem = "Documento retirado em <%= @pedido_atestado.updated_at.strftime("%d/%m/%Y") %>."
       $('#status-bar').css('background-color', 'green');
       break;
 
     default:
-      newprogress = 15;
-      mensagem = "Aguardando liberação do Nada Consta pelo setor bibliotecário."
-      break;
+      <% @pedido_atestado = nil %>
+      newprogress = 0;
+      mensagem = "Nada Encontrado!"
+      break;      
   }
 
   document.getElementById('msg-andamento').innerHTML = mensagem;
