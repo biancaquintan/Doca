@@ -6,11 +6,15 @@
 <hr/>
 
 <div class="btn-group menu-mobile" role="group" aria-label="Basic example">
-  <%= link_to pedidos_registro_path, :class => 'btn btn-menu' do %>
+  <%= link_to asset_path('/modelo-de-recibo.pdf'), target: '_blank', class: 'btn btn-menu' do %>
+    <i class="fa fa-print fa-5x pr-2" aria-hidden="true"></i>
+     Baixar modelo de recibo
+  <% end %>
+  <%= link_to pedidos_registro_path, class: 'btn btn-menu' do %>
     <i class="fa fa-list fa-5x pr-2" aria-hidden="true"></i>
      Atendimento de Pedidos
   <% end %>
-  <%= link_to buscapedido_path, :class => 'btn btn-menu2' do %>
+  <%= link_to buscapedido_path, class: 'btn btn-menu2' do %>
     <i class="fa fa-search fa-5x pr-1" aria-hidden="true"></i>
     Buscar Pedido
   <% end %>
