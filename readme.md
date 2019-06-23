@@ -1,7 +1,7 @@
 Bem-vindo ao nosso projeto! 
 Somos Bianca, David e Leandro.
 
-O projeto foi apresentado como trabalho de conclusão do curso Bacharelado em Sistemas de Informação no Intituto Federal Fluminense e consiste em um sistema acadêmico para solicitação de documentos. O processo baseou-se na abordagem Design Thinking.
+O projeto foi apresentado como trabalho de conclusão do curso Bacharelado em Sistemas de Informação no Instituto Federal Fluminense e consiste em um sistema acadêmico para solicitação de documentos. O processo baseou-se na abordagem Design Thinking.
 
 Versão Heroku disponível: http://nossotcc.herokuapp.com/
 
